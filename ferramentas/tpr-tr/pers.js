@@ -1,5 +1,17 @@
 // personifica a Verdes Plantas (7078) se ainda não estiver
+async function login(page) {
+  await page.goto('https://gestao.portilhoconsultoria.com.br/', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(4000);
+  if (!page.url().includes('/login')) return;
+  if (!process.env.VP_ROBO_EMAIL || !process.env.VP_ROBO_SENHA) throw new Error('VP_ROBO_EMAIL/VP_ROBO_SENHA ausentes');
+  await page.fill('input[name=email]', process.env.VP_ROBO_EMAIL);
+  await page.fill('input[name=password]', process.env.VP_ROBO_SENHA);
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(8000);
+  if (page.url().includes('/login')) throw new Error('login não concluído (código de verificação?)');
+}
 async function personify(page) {
+  await login(page);
   await page.goto('https://gestao.portilhoconsultoria.com.br/', { waitUntil: 'domcontentloaded' });
   await page.getByText('Bem vindo').waitFor({ timeout: 60000 });
   await page.waitForTimeout(3000);
