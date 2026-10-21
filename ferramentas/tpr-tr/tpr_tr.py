@@ -14,6 +14,7 @@ sendBySystem vem true também nas mensagens humanas e por isso não é usado.
 
 Regras assumidas (pendentes de validação com o Fernando):
 - Bloco = mensagens consecutivas do cliente; o relógio começa na primeira do bloco.
+- Cliente que volta após mais de 24 h de silêncio abre bloco novo; o anterior fecha como abandonado.
 - Atendimento novo (TPR) = bloco sem mensagem de vendedor humano no ticket nas 24 h anteriores.
   Os demais blocos são TR.
 - Bloco sem resposta humana até o momento da coleta = "sem resposta" (fica fora da mediana
@@ -30,7 +31,7 @@ from datetime import datetime, timedelta, timezone
 
 BRT = timezone(timedelta(hours=-3))
 ABRE, FECHA = 8, 18
-USUARIOS = {21035: "Carine", 15948: "Douglas", 12198: "Edimar", 12152: "Fernando", 28637: "Luana"}
+USUARIOS = {21035: "Carine", 15948: "Douglas", 12198: "Edimar", 12152: "Fernando", 28637: "Luana", 12197: "Jaqueline"}
 
 
 def ts(s):
@@ -116,11 +117,17 @@ def main(d, ini, fim):
                 continue
             inicio = m["t"]
             novo = ultimo_humano is None or (inicio - ultimo_humano) > timedelta(hours=24)
-            # avança até a próxima mensagem de vendedor humano
+            # avança até a próxima mensagem de vendedor humano; cliente que volta após
+            # mais de 24 h de silêncio abre bloco novo e o anterior fecha como abandonado
             j = i + 1
+            quebra = False
             while j < len(ms) and quem(ms[j]) != "vendedor":
+                if quem(ms[j]) == "cliente" and ms[j]["t"] - ms[j - 1]["t"] > timedelta(hours=24):
+                    quebra = True
+                    break
                 j += 1
-            resp = ms[j] if j < len(ms) else None
+            resp = ms[j] if j < len(ms) and not quebra else None
+            limite = ms[j]["t"] if quebra else corte
             if j0 <= inicio < j1:
                 kpi = "TPR" if novo else "TR"
                 if resp:
@@ -130,16 +137,16 @@ def main(d, ini, fim):
                     else:
                         eventos.append((kpi, USUARIOS.get(resp["userId"], f"user {resp['userId']}") if resp["userId"] else "celular (sem usuário)", seg / 60, inicio.date(), t, None))
                 else:
-                    aberto = segundos_expediente(inicio, corte) / 60
+                    aberto = segundos_expediente(inicio, limite) / 60
                     v = dono.get(t)
                     eventos.append((kpi, USUARIOS.get(v, f"user {v}"), None, inicio.date(), t, aberto))
-            # pula o resto do bloco do cliente
-            k = i + 1
-            while k < len(ms) and quem(ms[k]) != "vendedor":
-                k += 1
-            if k < len(ms):
-                ultimo_humano = ms[k]["t"]
-            i = k + 1 if k < len(ms) else len(ms)
+            if quebra:
+                i = j  # o cliente que voltou abre o próximo bloco
+            elif j < len(ms):
+                ultimo_humano = ms[j]["t"]
+                i = j + 1
+            else:
+                i = len(ms)
     return eventos, fora, meta
 
 

@@ -73,10 +73,10 @@ def main(d, ini, fim):
         "- **Sem resposta:** blocos sem resposta humana até a coleta. O tempo em aberto é contado em horas de expediente.",
         f"- **Atendidos fora do expediente** (cliente escreveu e foi respondido antes da abertura, p.ex. sábado): "
         f"TPR {fora.get('TPR', 0)} · TR {fora.get('TR', 0)}. Ficam fora da mediana; sábado depende de confirmação do Fernando.",
-        "- **Atendimento novo (TPR)** = mensagem do cliente sem resposta humana no ticket nas 24 h anteriores. Regra assumida, a validar com o Fernando.",
+        "- **Atendimento novo (TPR)** = mensagem do cliente sem resposta humana no ticket nas 24 h anteriores. Cliente que volta após mais de 24 h de silêncio abre bloco novo. Regras assumidas, a validar com o Fernando.",
         "- Vendedor = quem respondeu. Nos sem resposta, é o dono do card.",
         "- **Limitação conhecida:** um \"tá bom\"/\"obrigado\" de encerramento do cliente conta como bloco. Sem resposta, entra em \"sem resposta\"; se o vendedor volta a falar dias depois, vira um TR longo e pesa no P90. As medianas são pouco afetadas.",
-        "- Mensagens da loja enviadas pelo celular (sem usuário do painel) não param o relógio nesta versão. Com elas contando, a mediana da equipe varia menos de 0,5 min.",
+        "- Mensagens da loja enviadas pelo celular (sem usuário do painel) não param o relógio nesta versão. Com elas contando, a mediana da equipe varia menos de 1 min.",
         "- Base: cards do funil Verdes Plantas (10541) com mensagem no período. Conversas sem card no funil ficam de fora.",
     ]
     print("\n".join(L))
