@@ -1,0 +1,80 @@
+{
+ "dia": "2026-10-21",
+ "edicao": 2,
+ "s1_movimento": {
+  "total": 110
+ },
+ "s2_encerramentos": {
+  "serie_acumulado": {
+   "18/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "20/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "21/10": {
+    "perdida_sem_motivo": 1095,
+    "efetivada_sem_valor": 445,
+    "ganho_status_won_fora_da_efetivada": 124
+   }
+  }
+ },
+ "s3_followup": {
+  "serie": {
+   "20/10": {
+    "fu": 71,
+    "com_agendamento": 2
+   },
+   "21/10": {
+    "fu": 80,
+    "com_agendamento": 6
+   }
+  }
+ },
+ "s8_carga": {
+  "serie": {
+   "21/10": {
+    "Edimar": 72,
+    "Carine": 26,
+    "Douglas": 15,
+    "sem dono": 1,
+    "Fernando": 9,
+    "Luana": 3,
+    "Jaqueline": 2
+   }
+  }
+ },
+ "pedidos_amanha": [
+  {
+   "texto": "Pedidos da edição 1 ainda abertos: João Vitor Lara, os dois cards do 99933-1058, Lucilaine, Ray Decorações",
+   "telefones": [
+    "5542998284063",
+    "5542999331058",
+    "5542999884809",
+    "5542999770612"
+   ]
+  },
+  {
+   "texto": "Toddy (R$ 372), Márcia (R$ 244,28) e Célia Marques: tirar da Incógnita e encerrar por Ações → Venda ganha",
+   "telefones": [
+    "5542999495044",
+    "5542999709029",
+    "5542998229627"
+   ]
+  },
+  {
+   "texto": "Cards duplicados de Poli, Sil e Marli Gil: arquivar o card arrastado",
+   "telefones": [
+    "5542998288943",
+    "5542998510806",
+    "5542998375842"
+   ]
+  },
+  {
+   "texto": "Os 19 cards que dormiram na coluna Atendimento: Follow-up com mensagem agendada, ou encerrar pelo Ações",
+   "telefones": []
+  }
+ ]
+}
