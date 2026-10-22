@@ -223,7 +223,7 @@ Entra no relatório a partir da edição de 22/10.
 
 - `2026-10-22` — **Classificação por tag** entra como KPI 7 e como seção do relatório diário (pedido do Jhonatan). Medido: não existe tag PAISAGISMO.
 - `2026-10-22` — **Regra da versão única** do relatório: informação nova entra como seção da edição seguinte; nada de documento paralelo ao cliente (erro de 21/10: foi enviado um relatório só de TPR/TR em formato diferente).
-- `2026-10-22` — **Envio autorizado** todo dia útil, de manhã: WhatsApp ao Fernando pelo DKW da Portilho + e-mail verdes_plantas@yahoo.com.br.
+- `2026-10-22` — **Envio autorizado** todo dia útil às 20h, com o movimento do próprio dia: WhatsApp ao Fernando pelo DKW da Portilho + e-mail verdes_plantas@yahoo.com.br. Edição nº 3 = quinta 22/10.
 - `2026-10-21` — **TPR/TR medidos pela primeira vez** (semana 14–20/10 e dia 21/10). Definições de bloco, atendimento novo e bloco abandonado fixadas (a validar).
 - `2026-10-21` — **Mudança de régua do "ganho fora da coluna"**: `wonAt` → `status WON` (Regra Zero: `wonAt` passou a ser carimbado em todo encerramento por Ações).
 - `2026-10-19` — **Meta de TPR = 4 minutos**, definida pelo Fernando.

@@ -128,6 +128,8 @@ Destinatário: o dono. Lê em PDF, decide rápido. Título fixo **"Relatório di
 
 Sempre com **vendedor, cliente, telefone, valor e o trecho da nota**.
 
+Kit automático: `rodar_edicao.sh <dia> <dados_anterior.json>` gera `dados.json` com todas as seções (`dados_edicao.py`); a sessão redige o texto no formato da edição anterior e preenche `pedidos_amanha` (texto + telefones), que viram a seção "O que eu pedi ontem" da edição seguinte.
+
 **3. Mensagem agendada no Follow-up.** Cards em FU1+FU2 × com agendamento pendente (`sentAt` nulo, `sendAt` futuro, join por `contactId`). Série dia a dia. Totais da base (pendentes / história).
 
 **4. As notas do dia.** Quantas (nos cards movidos no dia), por quem, quantas com data/prazo.
@@ -186,7 +188,7 @@ Padrão completo: `wiki/entities/padrao-documentos-portilho.md`.
 
 ## 7. ENVIO
 
-Autorizado pelo Jhonatan em 22/10/2026, todo dia útil, **de manhã** (nunca de madrugada):
+Autorizado pelo Jhonatan em 22/10/2026, **todo dia útil às 20h, com o movimento do próprio dia** (leitura depois das 18h; edição nº 3 = quinta 22/10). Tarefa agendada "Relatório diário Verdes Plantas — 20h" acorda a conversa Comercial Verdesplantas às 19:41 (seg–sex), que já tem Drive, Gmail e o kit:
 
 1. **WhatsApp ao Fernando** pelo DKW **da Portilho** (empresa 7061 — nunca pelo WhatsApp da cliente): contato "Fernando - Verdes Plantas" (id 5517468, +55 42 99958-9335). Script `enviar.js <pdf> "<legenda>"` acha a conversa sozinho e confere a empresa. Legenda só apresenta; números ficam no PDF.
 2. **E-mail** para **`verdes_plantas@yahoo.com.br`** com o relatório no corpo (HTML de `md_html.py`, mesmo conteúdo do PDF). Assunto: `Relatório diário do comercial — Verdes Plantas — movimento de DD/MM (edição nº N)`.
