@@ -134,3 +134,19 @@ Usei o balde com label "2026-10-21", que é o dia UTC (de 20/10 21h a 21/10 21h,
 novas por vendedor. O TPR/TR do relatório deve continuar sendo calculado por mensagem: vendedor identificado
 pelo prefixo `*Nome:*`, mensagens com `sendBySystem`/`generatedByAi` excluídas, dentro do expediente,
 com mediana e P90. Ainda não medido.
+
+## Rotas do relatório diário e do TPR/TR [medido 2026-10-21/22]
+
+| O quê | Rota | Observação |
+|---|---|---|
+| Mensagens de um ticket | `GET /messages/{ticketId}?pageNumber=N` | página 1 = mais recentes; `hasMore`. Aqui `fromMe` **funciona** (true = loja). Vendedor = `fromMe` + `userId`; automação = `fromMe` sem `userId` (`columnAutomationId`, templates). `sendBySystem` vem true também em mensagem humana — não usar |
+| Cards de uma coluna | `GET /commercial-order/step/{stepId}?sortBy=lastMessageHour&sortDirection=DESC&archived=false&timezone=UTC&pageNumber=N` | 10 por página, ordenado pela última mensagem; traz `ticketIds`, `tags` (do contato) e `orderTags` (do card) |
+| Resumo por coluna | `GET /commercial-order/bulk-steps-summary/{pipelineId}` | contagem e valor por etapa |
+| Tags cadastradas | `GET /tags/list` | 30 tags na Verdes em 22/10; **sem PAISAGISMO** |
+| Tickets de um contato | `GET /tickets?searchParam=<8 dígitos>&showAll=true` | usado para achar a conversa do Fernando no ambiente da Portilho |
+| Enviar mensagem com anexo | `POST /messages/{ticketId}` (FormData: `medias`, `body`, `fromMe=true`) | só no ambiente da Portilho (7061), para o envio do relatório autorizado |
+
+**`wonAt` ≠ ganho.** Desde a liberação dos 4 estados em Ações (20/10), o DKW grava `wonAt` em todo encerramento
+pelo botão. Status do negócio: `OPEN` · `WON` · `LOST` · `CANCELLED` (Incógnita por Ações) · nulo. Ganho = `status WON`.
+
+**Anúncios do painel** ("Novidades do DKW System", 21/10) cobrem o menu de personificação; fechar com Esc ou "Dispensar".
