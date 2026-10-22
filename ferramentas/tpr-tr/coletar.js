@@ -18,7 +18,7 @@ const OUT = process.argv[3];
     for (let pg = 1; pg < 500; pg++) {
       const d = await get(`/commercial-order/step/${step}?searchParam=&sortBy=lastMessageHour&sortDirection=DESC&dateField=created_at&archived=false&timezone=UTC&pageNumber=${pg}`);
       const os = d.orders || [];
-      for (const o of os) if (new Date(o.sortingTimestamp) >= DESDE) cards.push({ id: o.id, step, userId: o.userId, user: o.name, ticketIds: o.ticketIds, contact: o.contactName, createdAt: o.createdAt, last: o.sortingTimestamp, status: o.status });
+      for (const o of os) if (new Date(o.sortingTimestamp) >= DESDE) cards.push({ id: o.id, step, userId: o.userId, user: o.name, ticketIds: o.ticketIds, contact: o.contactName, number: o.contactNumber, createdAt: o.createdAt, last: o.sortingTimestamp, status: o.status, amount: o.amount, orderTags: (o.orderTags || []).map(t => t.name), contactTags: (o.tags || []).map(t => t.name) });
       if (!os.length || new Date(os[os.length - 1].sortingTimestamp) < DESDE) break;
     }
     console.log('coluna', step, 'cards acumulados', cards.length);
