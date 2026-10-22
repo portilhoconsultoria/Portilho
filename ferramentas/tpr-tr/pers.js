@@ -51,4 +51,4 @@ async function unpersonify(page) {
   if (await b.count()) { await b.click(); await page.waitForTimeout(5000); }
   return page.evaluate(() => JSON.parse(localStorage.getItem('user')).company.id);
 }
-module.exports = { personify, unpersonify };
+module.exports = { personify, unpersonify, login };
