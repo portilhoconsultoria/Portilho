@@ -32,6 +32,8 @@ while i < len(md):
         out.append(f'<p style="color:#5F6F74;font-style:italic;margin:0 0 10px">{inl(l[4:])}</p>')
     elif l.startswith("## "):
         out.append(f'<h3 style="color:{AZUL};border-bottom:1px solid {AZUL};padding-bottom:3px;margin:16px 0 6px">{inl(l[3:])}</h3>')
+    elif l.startswith("> "):
+        out.append(f'<p style="margin:6px 0;padding-left:10px;border-left:2px solid #5E93B0;color:#5F6F74;font-style:italic">{inl(l[2:])}</p>')
     elif l.startswith("- "):
         if not lista: out.append("<ul>"); lista = True
         out.append(f"<li>{inl(l[2:])}</li>")

@@ -148,7 +148,7 @@ Nenhum dos quatro foi feito. Como os encerramentos novos já saem certos, o que 
 
 ## 10. COMO ESTE RELATÓRIO É FEITO
 
-Leitura direta da base do CRM, feita em 22/10 às 00h20: 6.755 negócios, 74 agendamentos, 114 notas dos cards movidos no dia, e 9.839 mensagens para o tempo de resposta. Os números saem da base; a redação e a leitura ainda passam por mim.
+Leitura direta da base do CRM, feita em 22/10 às 00h20: 6.755 negócios, 74 agendamentos, 114 notas dos cards movidos no dia, e 2.332 mensagens para o tempo de resposta. Os números saem da base; a redação e a leitura ainda passam por mim.
 
 Duas correções da edição 1. Ela dizia "tudo aqui o sistema calcula sozinho" e "relatório automático": não era exato, porque a montagem ainda é feita por mim. E a seção 2.2 dizia "3 de 4" perdas sem motivo, mas listou só uma.
 
