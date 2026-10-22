@@ -192,6 +192,7 @@ Autorizado pelo Jhonatan em 22/10/2026, **todo dia útil às 20h, com o moviment
 
 1. **WhatsApp ao Fernando** pelo DKW **da Portilho** (empresa 7061 — nunca pelo WhatsApp da cliente): contato "Fernando - Verdes Plantas" (id 5517468, +55 42 99958-9335). Script `enviar.js <pdf> "<legenda>"` acha a conversa sozinho e confere a empresa. Legenda só apresenta; números ficam no PDF.
 2. **E-mail** para **`verdes_plantas@yahoo.com.br`** com o relatório no corpo (HTML de `md_html.py`, mesmo conteúdo do PDF). Assunto: `Relatório diário do comercial — Verdes Plantas — movimento de DD/MM (edição nº N)`.
+   **Conferência do envio (22/10):** o POST devolve 200 antes de o WhatsApp entregar. O envio vai para o `@lid` do Fernando (mesmo identificador dos áudios dele), e no celular do Jhonatan pode não aparecer na hora — em 22/10 ele achou que não tinha chegado e reenviou, duplicando. Depois do envio, ler `/messages/4719278` e reportar o `ack` da mensagem (1 enviada · 2 entregue · 3 lida); só dizer "entregue" com ack ≥ 2.
 3. Salvar o markdown da edição no Drive (pasta `relatorios` da verdes-plantas) — marca o dia como enviado e evita reenvio.
 
 No Railway (`D:\portilho-agente`) existe `alerta_email.py` (SMTP Gmail) — alternativa ao conector Gmail.
