@@ -1,0 +1,134 @@
+{
+ "dia": "2026-10-22",
+ "edicao": 3,
+ "s1_movimento": {
+  "total": 89
+ },
+ "s2_encerramentos": {
+  "serie_acumulado": {
+   "18/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "20/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "21/10": {
+    "perdida_sem_motivo": 1095,
+    "efetivada_sem_valor": 445,
+    "ganho_status_won_fora_da_efetivada": 124
+   },
+   "22/10": {
+    "perdida_sem_motivo": 1090,
+    "efetivada_sem_valor": 444,
+    "ganho_status_won_fora_da_efetivada": 128
+   }
+  }
+ },
+ "s3_followup": {
+  "serie": {
+   "20/10": {
+    "fu": 71,
+    "com_agendamento": 2
+   },
+   "21/10": {
+    "fu": 80,
+    "com_agendamento": 6
+   },
+   "22/10": {
+    "fu": 81,
+    "com_agendamento": 4
+   }
+  }
+ },
+ "s5_coluna": {
+  "dormiram": 27
+ },
+ "s7_tags": {
+  "iniciados": 29,
+  "com_tag_tipo": 8
+ },
+ "s8_carga": {
+  "serie": {
+   "21/10": {
+    "Edimar": 72,
+    "Carine": 26,
+    "Douglas": 15,
+    "sem dono": 1,
+    "Fernando": 9,
+    "Luana": 3,
+    "Jaqueline": 2
+   },
+   "22/10": {
+    "Carine": 38,
+    "Douglas": 26,
+    "Edimar": 80,
+    "Luana": 10,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   }
+  }
+ },
+ "pedidos_amanha": [
+  {
+   "texto": "Os 11 cards antigos (João Vitor Lara, 99933-1058 x2, Lucilaine, Ray Decorações, Toddy, Márcia, Célia Marques, duplicados de Poli, Sil e Marli Gil), de uma vez, por uma pessoa designada",
+   "telefones": [
+    "5542998284063",
+    "5542999331058",
+    "5542999884809",
+    "5542999770612",
+    "5542999495044",
+    "5542999709029",
+    "5542998229627",
+    "5542998288943",
+    "5542998510806",
+    "5542998375842"
+   ]
+  },
+  {
+   "texto": "Clientes que prometeram vir à loja: tirar da Incógnita e mover para Follow-up com mensagem agendada (Thiago Kocinski R$ 600 primeiro)",
+   "telefones": [
+    "5542999839012",
+    "5547984175563",
+    "5542999439010",
+    "5542984214908",
+    "5542998111269",
+    "5542998153354",
+    "5541998293360",
+    "5542999879979"
+   ]
+  },
+  {
+   "texto": "Os 21 atendimentos iniciados em 22/10 sem tag de tipo: classificar os abertos; criar a tag PAISAGISMO",
+   "telefones": [
+    "5542984172375",
+    "5542998252386",
+    "5542998219982",
+    "5542999600564",
+    "5542999443502",
+    "5542998009998",
+    "5542999258257",
+    "5542999159697",
+    "5541995131915",
+    "5542998011249",
+    "5542991280829",
+    "5542998758965",
+    "5542998472463",
+    "5542998659008",
+    "5542999617708",
+    "5542999707970",
+    "5542998007419",
+    "5542999889243",
+    "5542998352003",
+    "5542998095806",
+    "5547984175563"
+   ]
+  },
+  {
+   "texto": "Os 27 cards que dormiram na coluna Atendimento: Follow-up com mensagem agendada, ou encerrar pelo Ações",
+   "telefones": []
+  }
+ ]
+}
