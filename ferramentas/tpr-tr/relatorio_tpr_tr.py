@@ -23,13 +23,13 @@ def fmt(v):
 
 
 def tabela(linhas, meta):
-    out = ["| Vendedor | Respondidos | Mediana | P90 | Sem resposta | Tempo em aberto (mediana) |", "|---|---|---|---|---|---|"]
+    out = ["| Vendedor | Respondidos | Mediana | P90 | Sem resposta | Tempo em aberto (mediana) | Chegaram após o expediente |", "|---|---|---|---|---|---|---|"]
     for v, r in linhas.items():
         med = fmt(r["mediana_min"])
         if r["mediana_min"] is not None and meta is not None:
             med += " ✅" if r["mediana_min"] <= meta else " ❌"
-        nome = f"**{v}**" if v == "Equipe" else v
-        out.append(f"| {nome} | {r['respondidos']} | {med} | {fmt(r['p90_min'])} | {r['sem_resposta']} | {fmt(r['sem_resposta_mediana_aberto_min'])} |")
+        nome = f"**{v}**" if v == "Equipe" else ("sem dono no card" if v == "user None" else v)
+        out.append(f"| {nome} | {r['respondidos']} | {med} | {fmt(r['p90_min'])} | {r['sem_resposta']} | {fmt(r['sem_resposta_mediana_aberto_min'])} | {r['aguardando_abertura']} |")
     return "\n".join(out)
 
 
@@ -70,7 +70,8 @@ def main(d, ini, fim):
         "## Como ler",
         "",
         "- **Respondidos:** blocos de mensagem do cliente que tiveram resposta humana. A mediana e o P90 usam só esses.",
-        "- **Sem resposta:** blocos sem resposta humana até a coleta. O tempo em aberto é contado em horas de expediente.",
+        "- **Sem resposta:** blocos sem resposta humana até a coleta, com prazo já correndo. O tempo em aberto é contado em horas de expediente.",
+        "- **Chegaram após o expediente:** sem resposta, mas o relógio só começa na próxima abertura (08h do dia útil seguinte). Ainda não são atraso.",
         f"- **Atendidos fora do expediente** (cliente escreveu e foi respondido antes da abertura, p.ex. sábado): "
         f"TPR {fora.get('TPR', 0)} · TR {fora.get('TR', 0)}. Ficam fora da mediana; sábado depende de confirmação do Fernando.",
         "- **Atendimento novo (TPR)** = mensagem do cliente sem resposta humana no ticket nas 24 h anteriores. Cliente que volta após mais de 24 h de silêncio abre bloco novo. Regras assumidas, a validar com o Fernando.",

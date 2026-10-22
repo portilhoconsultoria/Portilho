@@ -168,8 +168,9 @@ def resumo(eventos):
                 "respondidos": len(r),
                 "mediana_min": pct(r, 0.5),
                 "p90_min": pct(r, 0.9),
-                "sem_resposta": len(s),
-                "sem_resposta_mediana_aberto_min": pct(s, 0.5),
+                "sem_resposta": sum(1 for x in s if x > 0),
+                "sem_resposta_mediana_aberto_min": pct([x for x in s if x > 0], 0.5),
+                "aguardando_abertura": sum(1 for x in s if x == 0),
             }
         out[kpi] = linhas
     return out
