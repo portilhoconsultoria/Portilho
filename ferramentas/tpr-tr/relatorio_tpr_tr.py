@@ -23,7 +23,7 @@ def fmt(v):
 
 
 def tabela(linhas, meta):
-    out = ["| Vendedor | Respondidos | Mediana | P90 | Sem resposta | Tempo em aberto (mediana) | Chegaram após o expediente |", "|---|---|---|---|---|---|---|"]
+    out = ["| Vendedor | Respondidos | Mediana | P90 | Sem resposta | Em aberto (mediana) | Após 18h |", "|---|---|---|---|---|---|---|"]
     for v, r in linhas.items():
         med = fmt(r["mediana_min"])
         if r["mediana_min"] is not None and meta is not None:
@@ -40,7 +40,7 @@ def main(d, ini, fim):
     L = [
         f"# TPR / TR — Verdes Plantas — {periodo}",
         "",
-        f"Coleta: {meta['coletadoEm'][:16].replace('T', ' ')} UTC · {meta['cards']} cards com mensagem no período · "
+        f"Coleta: {tpr_tr.ts(meta['coletadoEm']):%d/%m/%Y %H:%M} (Brasília) · {meta['cards']} cards com mensagem no período · "
         f"{meta['tickets']} tickets · {meta['mensagens']} mensagens lidas.",
         "Tempo contado só no expediente (seg–sex 08–18h). Só resposta de vendedor humano para o relógio.",
         "",
@@ -52,17 +52,17 @@ def main(d, ini, fim):
         "",
         tabela(res["TR"], META_TR),
         "",
-        "## Por dia (equipe)",
-        "",
-        "| Dia | TPR n | TPR mediana | TPR P90 | TR n | TR mediana | TR P90 |",
-        "|---|---|---|---|---|---|---|",
     ]
+    if ini != fim:
+        L += ["## Por dia (equipe)", "",
+              "| Dia | TPR n | TPR mediana | TPR P90 | TR n | TR mediana | TR P90 |",
+              "|---|---|---|---|---|---|---|"]
     from collections import defaultdict
     dias = defaultdict(lambda: defaultdict(list))
     for k, _, mins, dia, _, _ in ev:
         if mins is not None:
             dias[str(dia)][k].append(mins)
-    for dia in sorted(dias):
+    for dia in sorted(dias) if ini != fim else []:
         a, b = dias[dia]["TPR"], dias[dia]["TR"]
         L.append(f"| {dia} | {len(a)} | {fmt(tpr_tr.pct(a, .5))} | {fmt(tpr_tr.pct(a, .9))} | {len(b)} | {fmt(tpr_tr.pct(b, .5))} | {fmt(tpr_tr.pct(b, .9))} |")
     L += [
@@ -71,7 +71,7 @@ def main(d, ini, fim):
         "",
         "- **Respondidos:** blocos de mensagem do cliente que tiveram resposta humana. A mediana e o P90 usam só esses.",
         "- **Sem resposta:** blocos sem resposta humana até a coleta, com prazo já correndo. O tempo em aberto é contado em horas de expediente.",
-        "- **Chegaram após o expediente:** sem resposta, mas o relógio só começa na próxima abertura (08h do dia útil seguinte). Ainda não são atraso.",
+        "- **Após 18h:** sem resposta, mas o relógio só começa na próxima abertura (08h do dia útil seguinte). Ainda não são atraso.",
         f"- **Atendidos fora do expediente** (cliente escreveu e foi respondido antes da abertura, p.ex. sábado): "
         f"TPR {fora.get('TPR', 0)} · TR {fora.get('TR', 0)}. Ficam fora da mediana; sábado depende de confirmação do Fernando.",
         "- **Atendimento novo (TPR)** = mensagem do cliente sem resposta humana no ticket nas 24 h anteriores. Cliente que volta após mais de 24 h de silêncio abre bloco novo. Regras assumidas, a validar com o Fernando.",
