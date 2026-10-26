@@ -31,8 +31,18 @@ async function personify(page) {
   if (cur === 7078) return;
   const an = page.getByRole('button', { name: 'Agora não' }); if (await an.count()) { await an.first().click(); await page.waitForTimeout(800); }
   await fecharModais(page);
-  await page.locator('button').nth(5).click();
-  await page.getByRole('menuitem', { name: 'Personificar empresa' }).click();
+  // layout novo (26/10): o menu da conta abre no bloco do usuário, no rodapé da barra lateral (nome + e-mail)
+  const item = page.getByRole('menuitem', { name: 'Personificar empresa' });
+  const email = await page.evaluate(() => (JSON.parse(localStorage.getItem('user')) || {}).email || '');
+  if (email) { const u = page.getByText(email.slice(0, 18), { exact: false }).first(); if (await u.count()) { await u.click(); await page.waitForTimeout(1000); } }
+  // layout antigo: botão do avatar sem rótulo no topo
+  for (let i = 0; i < 12 && !(await item.count()); i++) {
+    const b = page.locator('button').nth(i);
+    if (await b.getAttribute('aria-label') || (await b.innerText()).trim()) continue;
+    await b.click(); await page.waitForTimeout(800);
+    if (!(await item.count())) { await page.keyboard.press('Escape'); await page.waitForTimeout(400); }
+  }
+  await item.click();
   const dlg = page.locator('[role=dialog]'); await dlg.waitFor();
   await dlg.locator('[role=combobox], input').first().click();
   await page.keyboard.type('Verdes', { delay: 80 }); await page.waitForTimeout(2000);
@@ -47,8 +57,11 @@ async function unpersonify(page) {
   await page.goto('https://gestao.portilhoconsultoria.com.br/', { waitUntil: 'domcontentloaded' });
   await page.getByText('Bem vindo').waitFor({ timeout: 60000 }); await page.waitForTimeout(3000);
   await fecharModais(page);
-  const b = page.getByRole('button', { name: 'Voltar para empresa original' });
-  if (await b.count()) { await b.click(); await page.waitForTimeout(5000); }
+  // rótulo do botão mudou no layout novo (26/10): "Voltar para empresa original" → "Sair da personificação"
+  for (const nome of ['Sair da personificação', 'Voltar para empresa original']) {
+    const b = page.getByRole('button', { name: nome });
+    if (await b.count()) { await b.first().click(); await page.waitForTimeout(5000); break; }
+  }
   return page.evaluate(() => JSON.parse(localStorage.getItem('user')).company.id);
 }
 module.exports = { personify, unpersonify, login };
