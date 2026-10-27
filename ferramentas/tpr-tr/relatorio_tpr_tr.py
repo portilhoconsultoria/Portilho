@@ -59,7 +59,7 @@ def main(d, ini, fim):
               "|---|---|---|---|---|---|---|"]
     from collections import defaultdict
     dias = defaultdict(lambda: defaultdict(list))
-    for k, _, mins, dia, _, _ in ev:
+    for k, _, mins, dia, _, _, *_ in ev:
         if mins is not None:
             dias[str(dia)][k].append(mins)
     for dia in sorted(dias) if ini != fim else []:

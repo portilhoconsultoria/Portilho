@@ -102,7 +102,7 @@ def main(d, ini, fim):
         for t in c["ticketIds"] or []:
             dono[str(t)] = c["userId"]
 
-    eventos = []  # (kpi, vendedor, minutos | None, dia, ticket, aberto_min)
+    eventos = []  # (kpi, vendedor, minutos | None, dia, ticket, aberto_min, chegada)
     fora = defaultdict(int)
     for t, ms in msgs.items():
         ms = sorted(({**m, "t": ts(m["at"])} for m in ms if not m.get("deleted")), key=lambda m: m["t"])
@@ -135,11 +135,11 @@ def main(d, ini, fim):
                     if seg == 0 and not (util(inicio) and ABRE <= inicio.hour < FECHA):
                         fora[kpi] += 1  # aberto e respondido fora do expediente: fora da mediana
                     else:
-                        eventos.append((kpi, USUARIOS.get(resp["userId"], f"user {resp['userId']}") if resp["userId"] else "celular (sem usuário)", seg / 60, inicio.date(), t, None))
+                        eventos.append((kpi, USUARIOS.get(resp["userId"], f"user {resp['userId']}") if resp["userId"] else "celular (sem usuário)", seg / 60, inicio.date(), t, None, inicio))
                 else:
                     aberto = segundos_expediente(inicio, limite) / 60
                     v = dono.get(t)
-                    eventos.append((kpi, USUARIOS.get(v, f"user {v}"), None, inicio.date(), t, aberto))
+                    eventos.append((kpi, USUARIOS.get(v, f"user {v}"), None, inicio.date(), t, aberto, inicio))
             if quebra:
                 i = j  # o cliente que voltou abre o próximo bloco
             elif j < len(ms):
@@ -155,7 +155,7 @@ def resumo(eventos):
     for kpi in ("TPR", "TR"):
         por = defaultdict(list)
         sem = defaultdict(list)
-        for k, v, mins, _, _, ab in eventos:
+        for k, v, mins, _, _, ab, *_ in eventos:
             if k != kpi:
                 continue
             for chave in (v, "Equipe"):
