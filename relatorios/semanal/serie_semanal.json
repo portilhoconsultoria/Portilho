@@ -1,0 +1,25 @@
+{
+ "2026-10-19": {
+  "n": 1,
+  "atendimentos_novos": 127,
+  "encerramentos": 246,
+  "por_acoes": 121,
+  "incognita": 135,
+  "vendas_ok": 34,
+  "valor_vendas": 11795.8,
+  "perdas": 33,
+  "perdas_com_motivo": 26,
+  "tpr_mediana_min": 32.3,
+  "tpr_p90_min": 263.0,
+  "tr_mediana_min": 5.2,
+  "agendamentos_criados": 14,
+  "notas": 242,
+  "notas_com_data": 4,
+  "tags_iniciados": 124,
+  "tags_com_tipo": 37,
+  "carteira_ativa_fim": 195,
+  "coorte_vendas": 12,
+  "coorte_aberto": 58,
+  "nota": "semana 1 = linha de base; 19–20/10 com limpeza de cards antigos; Ações liberado em 20/10"
+ }
+}
