@@ -168,9 +168,22 @@ Fonte: `/messages/{ticketId}` dos tickets dos cards com mensagem no dia. Relógi
 
 ---
 
+### 5-B. Análise semanal (desde 27/10/2026)
+
+Pedido do Jhonatan em 27/10: **análise semanal da semana seg–sáb, enviada ao Fernando todo sábado às 13h** (WhatsApp + e-mail, mesmo canal do diário). Tarefa agendada "Análise semanal Verdes Plantas — sábado 13h" acorda a conversa às 12h07 (sáb). A nº 1 é a semana 19–24/10 (linha de base).
+
+- Método completo, agentes (A1 tempo de resposta · A2 qualidade do encerramento · A3 follow-up e estoque parado · A4 tags · A5 carga · A6 coorte · A7 "não temos" · A8 motivo de perda real · A9 comportamentos da conversa · A10 experimentos · orquestrador estatístico) e fontes: `relatorios/semanal/Proposta_Analise_Semanal_Verdes_Plantas.md`.
+- Kit: `rodar_semana.sh <segunda> <último dia>` → `coletar.js` + `coletar_semana.js` + `semana.py` → `semana.json`. Leva ~20–30 min.
+- Regras do orquestrador: com < 6 semanas de série, "linha de base em formação" e **nenhum alarme**; depois, só 3 regras de sinal (ponto fora do limite; 8 semanas do mesmo lado; 3 de 4 perto do limite). Tempo = mediana/P90; proporção com n à vista; vendedor com n < 10–15 não é comparado.
+- Tom: sistema antes de pessoa; no máximo 3 decisões pedidas ao dono; nunca ranking.
+- Limite da base: o DKW guarda só a última movimentação do card — movimento e carga por dia vêm dos `dados_edicao` diários.
+- Série semanal em `relatorios/semanal/serie_semanal.json`.
+
 ## 6. SAÍDA EM PDF E WORD
 
 Usar `timbrado_engine.py` (markdown → PDF timbrado) e `gerar_doc.py` (PDF + .docx do mesmo markdown).
+
+**Padrão visual obrigatório (Jhonatan, 27/10):** todo documento ao Fernando — diário, semanal ou qualquer outro — sai no **timbrado da Portilho** pelo `gerar_doc.py`: mesmas cores (azul #1C6086), cabeçalho, rodapé com página, margens e fonte do relatório diário. Nunca gerar PDF por outro caminho nem inventar layout novo. Antes de enviar, renderizar as páginas e comparar com a última edição diária.
 
 ```python
 from timbrado_engine import gerar_pdf
