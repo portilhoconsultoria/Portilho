@@ -230,3 +230,7 @@ Entra no relatório a partir da edição de 22/10.
 - `2026-10-19` — **Horário de expediente confirmado** seg–sex 08:00–18:00.
 - `2026-10-20` — **Retratação do achado "0% de notas"**. Lição: quando um número dá 0% ou 100%, a primeira hipótese é instrumento errado.
 - `2026-10-19` — **Página criada.**
+
+## Análise semanal [definida 2026-10-27]
+
+Semana seg–sáb, enviada ao Fernando todo sábado às 13h (WhatsApp + e-mail), no timbrado da Portilho (mesmo `gerar_doc.py` do diário). Nº 1 = 19–24/10 (linha de base). Método, um agente por indicador e fontes científicas: `relatorios/semanal/Proposta_Analise_Semanal_Verdes_Plantas.md`. Kit: `ferramentas/tpr-tr/rodar_semana.sh`.
