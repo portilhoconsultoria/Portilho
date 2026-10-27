@@ -28,6 +28,10 @@ Em 18/10/2026 este projeto reportou *"138 de 142 cards sem nota, regra com 0% de
 > **Quando um indicador der 0% ou 100% — ou saltar sem explicação — a primeira hipótese é instrumento errado, não comportamento extremo.** Validar contra o texto real antes de escrever qualquer coisa.
 
 Casos já registrados:
+- **Raspinha ≠ Venda Efetivada (27/10).** A mensagem "A Verdes Plantas preparou uma surpresa…" (columnAutomationId 56000) é a automação da **Venda Perdida**. A Venda Efetivada manda "Obrigado por escolher a Verdes Plantas"; a boas-vindas "Enquanto aguarda seu atendimento…" é a 46387. Antes de atribuir mensagem a coluna, conferir o `colAuto` nas mensagens.
+- **Pós-venda não é venda nova (27/10).** Notas "já fez o pedido", "vai vir retirar", "confirmar a data da grama" e contatos da "Maria" são aviso/retirada de pedido já vendido — não pedir "Venda ganha" (risco de contar duas vezes). Regra pendente do Fernando.
+- **Regra da Incógnita do Fernando (27/10):** conversou e sumiu → Venda Perdida (sem valor, com motivo); só a 1ª mensagem, sem interação → Incógnita. Seção 2.3 do diário passou a ser "Incógnita com conversa".
+- **Cards duplicados** nascem quando o cliente volta a escrever e o DKW abre negociação nova; o vendedor encerra um pelo Ações e arrasta o outro. Tratar como causa de sistema.
 - **Layout novo do DKW (26/10):** o menu da conta (com "Personificar empresa") fica no bloco do usuário, no rodapé da barra lateral; o botão de voltar virou "Sair da personificação". O `pers.js` antigo deixou a conta personificando a cliente (7078) — **sempre conferir `empresaAoFinal` = 7061** e, se não, desfazer antes de qualquer outra coisa.
 - `observation` lido como nota (18/10).
 - `wonAt` passou a ser carimbado em **todo encerramento pelo botão Ações** (Incógnita, perda e ganho) desde que os 4 estados foram liberados em 20/10. Contar "ganho" por `wonAt` fez o indicador saltar de 191 para 220 sem nada ter piorado. **Ganho = `status === "WON"`.** (21/10)

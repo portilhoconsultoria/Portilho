@@ -25,7 +25,7 @@ ATIVAS = (44341, 69421, 36971, 113074)
 U = tpr_tr.USUARIOS
 TAG_TIPO = {"BUQUES", "GRAMA", "FLOR DE PRESENTE", "FLOR DE CORTE", "PLANTAS ORMAMENTAIS", "PLANTAS ORNAMENTAIS",
             "FRUTÍFERAS", "ARVORES DE SOMBRA", "PALMEIRA", "CEDROS", "EUCALIPTO", "TREPADEIRA", "FORRAÇÃO", "PEDRA",
-            "TERRA / SUBSTRATO", "VASOS", "CESTA DE CAFÉ", "PAISAGISMO"}
+            "TERRA / SUBSTRATO", "VASOS", "CESTA DE CAFÉ", "PAISAGISMO", "FOLHAGENS", "ADUBOS", "OUTROS"}
 VENDA = re.compile(r"j[aá] fez o pedido|fez o pedido|comprou|vem buscar|vai vir|vai passar|passar na loja|entregamos|"
                    r"veio na loja|veio at[eé] a loja|pagou", re.I)
 PERDA = re.compile(r"achou caro|\bcaro\b|frete|outra cidade|desistiu|n[aã]o vai querer|mais barato|n[aã]o temos|n[aã]o tinha", re.I)
