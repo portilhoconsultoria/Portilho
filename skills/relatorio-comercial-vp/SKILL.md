@@ -209,6 +209,23 @@ Padrão completo: `wiki/entities/padrao-documentos-portilho.md`.
 Autorizado pelo Jhonatan em 22/10/2026, **todo dia útil às 20h, com o movimento do próprio dia** (leitura depois das 18h; edição nº 3 = quinta 22/10). Tarefa agendada "Relatório diário Verdes Plantas — 20h" acorda a conversa Comercial Verdesplantas às 19:41 (seg–sex), que já tem Drive, Gmail e o kit:
 
 1. **WhatsApp ao Fernando** pelo DKW **da Portilho** (empresa 7061 — nunca pelo WhatsApp da cliente): contato "Fernando - Verdes Plantas" (id 5517468, +55 42 99958-9335). Script `enviar.js <pdf> "<legenda>"` acha a conversa sozinho e confere a empresa. Legenda só apresenta; números ficam no PDF.
+   **Formato da legenda do WhatsApp (Jhonatan, 28/10):** nunca um bloco só. Saudação sozinha na 1ª linha, linha em branco entre os blocos, destaques em tópicos curtos, negrito do WhatsApp (`*texto*`) só nos títulos. Modelo do diário:
+
+   ```
+   Fernando, boa noite!
+
+   Segue o *relatório diário do comercial* — edição nº N, movimento de DD/MM.
+
+   *Destaques do dia:*
+   • <destaque 1, uma linha>
+   • <destaque 2, uma linha>
+
+   *Para amanhã:* <1 linha — os pedidos estão na seção 10>.
+
+   Qualquer dúvida, estou à disposição.
+   ```
+
+   Semanal: mesmo modelo, com "*análise semanal do comercial* — nº N, semana de DD a DD/MM (segunda a sábado)", "*Destaques da semana:*" e "*Três decisões para você* estão na primeira página." Passar a legenda ao `enviar.js` com quebras de linha reais (`$'...\n...'` no bash).
 2. **E-mail** para **`verdes_plantas@yahoo.com.br`** com o relatório no corpo (HTML de `md_html.py`, mesmo conteúdo do PDF). Assunto: `Relatório diário do comercial — Verdes Plantas — movimento de DD/MM (edição nº N)`.
    **Conferência do envio (22/10):** o POST devolve 200 antes de o WhatsApp entregar. O envio vai para o `@lid` do Fernando (mesmo identificador dos áudios dele), e no celular do Jhonatan pode não aparecer na hora — em 22/10 ele achou que não tinha chegado e reenviou, duplicando. Depois do envio, ler `/messages/4719278` e reportar o `ack` da mensagem (1 enviada · 2 entregue · 3 lida); só dizer "entregue" com ack ≥ 2.
 3. Salvar o markdown da edição no Drive (pasta `relatorios` da verdes-plantas) — marca o dia como enviado e evita reenvio.
