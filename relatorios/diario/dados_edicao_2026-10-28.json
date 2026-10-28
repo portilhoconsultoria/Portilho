@@ -1,0 +1,847 @@
+{
+ "dia": "2026-10-28",
+ "coleta": "28/10/2026 19:52",
+ "volume": {
+  "negocios": 6844,
+  "agendamentos": 93,
+  "notas_lidas": 56
+ },
+ "s1_movimento": {
+  "total": 66,
+  "por_destino": [
+   [
+    "Atendimento de Vendedores",
+    23
+   ],
+   [
+    "Follow-up 2",
+    10
+   ],
+   [
+    "Follow-up 1",
+    9
+   ],
+   [
+    "Incógnita",
+    6
+   ],
+   [
+    "Atendimento Inicial",
+    5
+   ],
+   [
+    "Venda Perdida",
+    5
+   ],
+   [
+    "Venda Efetivada",
+    4
+   ],
+   [
+    "Não Comercial",
+    4
+   ]
+  ],
+  "anterior_total": 103
+ },
+ "s2_encerramentos": {
+  "encerramentos": 19,
+  "por_acoes": 18,
+  "arrastados": 1,
+  "vendas": 4,
+  "vendas_problema": [],
+  "perdas": 5,
+  "perdas_sem_motivo": [
+   {
+    "vendedor": "Carine",
+    "cliente": "Salete",
+    "telefone": "5542999197927",
+    "valor": "119.97",
+    "status": "OPEN",
+    "nota": "",
+    "duplicado_com_card_certo": true
+   }
+  ],
+  "incognita_com_sinal": [
+   {
+    "vendedor": "Luana",
+    "cliente": "Lucia Santos",
+    "telefone": "5542998060547",
+    "valor": "50.00",
+    "status": "WON",
+    "nota": "",
+    "sinal": "ganho marcado"
+   }
+  ],
+  "acumulado": {
+   "perdida_sem_motivo": 1085,
+   "efetivada_sem_valor": 438,
+   "ganho_status_won_fora_da_efetivada": 130
+  },
+  "serie_acumulado": {
+   "18/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "20/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "21/10": {
+    "perdida_sem_motivo": 1095,
+    "efetivada_sem_valor": 445,
+    "ganho_status_won_fora_da_efetivada": 124
+   },
+   "22/10": {
+    "perdida_sem_motivo": 1090,
+    "efetivada_sem_valor": 444,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "23/10": {
+    "perdida_sem_motivo": 1086,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "26/10": {
+    "perdida_sem_motivo": 1083,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 130
+   },
+   "27/10": {
+    "perdida_sem_motivo": 1084,
+    "efetivada_sem_valor": 440,
+    "ganho_status_won_fora_da_efetivada": 131
+   },
+   "28/10": {
+    "perdida_sem_motivo": 1085,
+    "efetivada_sem_valor": 438,
+    "ganho_status_won_fora_da_efetivada": 130
+   }
+  }
+ },
+ "s3_followup": {
+  "cards_fu": 125,
+  "com_agendamento": 10,
+  "sem": 115,
+  "pendentes_base": 18,
+  "historico_base": 93,
+  "serie": {
+   "20/10": {
+    "fu": 71,
+    "com_agendamento": 2
+   },
+   "21/10": {
+    "fu": 80,
+    "com_agendamento": 6
+   },
+   "22/10": {
+    "fu": 81,
+    "com_agendamento": 4
+   },
+   "23/10": {
+    "fu": 87,
+    "com_agendamento": 6
+   },
+   "26/10": {
+    "fu": 106,
+    "com_agendamento": 10
+   },
+   "27/10": {
+    "fu": 109,
+    "com_agendamento": 12
+   },
+   "28/10": {
+    "fu": 125,
+    "com_agendamento": 10
+   }
+  }
+ },
+ "s4_notas": {
+  "total": 25,
+  "por_autor": [
+   [
+    "Edimar",
+    18
+   ],
+   [
+    "Carine",
+    5
+   ],
+   [
+    "Douglas",
+    2
+   ]
+  ],
+  "com_data": [
+   {
+    "autor": "Carine",
+    "texto": "Cliente solicitou astromélias nas cores rosa-claro e branco para decoração de bolo, com previsão de uso no dia 13. Infor"
+   }
+  ]
+ },
+ "s5_coluna": {
+  "por_coluna": [
+   [
+    "Atendimento Inicial",
+    21
+   ],
+   [
+    "Atendimento de Vendedores",
+    54
+   ],
+   [
+    "Follow-up 1",
+    68
+   ],
+   [
+    "Follow-up 2",
+    57
+   ]
+  ],
+  "atendimento": 75,
+  "dormiram": 47
+ },
+ "s6_tempo_resposta": {
+  "resumo": {
+   "TPR": {
+    "Carine": {
+     "respondidos": 19,
+     "mediana_min": 8.452233333333334,
+     "p90_min": 92.14715333333332,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 292.93240833333334,
+     "aguardando_abertura": 1
+    },
+    "Douglas": {
+     "respondidos": 8,
+     "mediana_min": 2.1753833333333334,
+     "p90_min": 25.242111666666666,
+     "sem_resposta": 1,
+     "sem_resposta_mediana_aberto_min": 522.0872833333334,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 3,
+     "mediana_min": 56.67406666666667,
+     "p90_min": 87.87549333333334,
+     "sem_resposta": 3,
+     "sem_resposta_mediana_aberto_min": 116.40563333333333,
+     "aguardando_abertura": 1
+    },
+    "Fernando": {
+     "respondidos": 2,
+     "mediana_min": 123.89882500000002,
+     "p90_min": 221.38288500000002,
+     "sem_resposta": 2,
+     "sem_resposta_mediana_aberto_min": 259.8222333333333,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 32,
+     "mediana_min": 7.853691666666667,
+     "p90_min": 95.0816716666667,
+     "sem_resposta": 10,
+     "sem_resposta_mediana_aberto_min": 259.8222333333333,
+     "aguardando_abertura": 2
+    }
+   },
+   "TR": {
+    "Carine": {
+     "respondidos": 90,
+     "mediana_min": 4.444599999999999,
+     "p90_min": 25.647560000000126,
+     "sem_resposta": 3,
+     "sem_resposta_mediana_aberto_min": 219.91823333333332,
+     "aguardando_abertura": 1
+    },
+    "Douglas": {
+     "respondidos": 18,
+     "mediana_min": 1.108075,
+     "p90_min": 30.05269166666669,
+     "sem_resposta": 5,
+     "sem_resposta_mediana_aberto_min": 471.9331166666667,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 20,
+     "mediana_min": 7.098858333333333,
+     "p90_min": 141.01485000000002,
+     "sem_resposta": 7,
+     "sem_resposta_mediana_aberto_min": 306.09198333333336,
+     "aguardando_abertura": 1
+    },
+    "Fernando": {
+     "respondidos": 6,
+     "mediana_min": 41.07585,
+     "p90_min": 89.73365833333332,
+     "sem_resposta": 3,
+     "sem_resposta_mediana_aberto_min": 385.73473333333334,
+     "aguardando_abertura": 0
+    },
+    "Luana": {
+     "respondidos": 1,
+     "mediana_min": 439.17674999999997,
+     "p90_min": 439.17674999999997,
+     "sem_resposta": 0,
+     "sem_resposta_mediana_aberto_min": null,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 135,
+     "mediana_min": 4.6733666666666664,
+     "p90_min": 53.77595666666669,
+     "sem_resposta": 18,
+     "sem_resposta_mediana_aberto_min": 403.731275,
+     "aguardando_abertura": 2
+    }
+   }
+  },
+  "fora_expediente": {},
+  "mensagens_lidas": 2164,
+  "meta_tpr_min": 4,
+  "proposta_tr_min": 15
+ },
+ "s7_tags": {
+  "iniciados": 19,
+  "com_tag_tipo": 3,
+  "por_vendedor": {
+   "Fernando": {
+    "iniciados": 2,
+    "com_tag_tipo": 0,
+    "tags": []
+   },
+   "Carine": {
+    "iniciados": 10,
+    "com_tag_tipo": 1,
+    "tags": [
+     [
+      "BUQUES",
+      1
+     ],
+     [
+      "FINADOS 2026",
+      1
+     ]
+    ]
+   },
+   "Edimar": {
+    "iniciados": 4,
+    "com_tag_tipo": 1,
+    "tags": [
+     [
+      "FORRAÇÃO",
+      1
+     ]
+    ]
+   },
+   "Douglas": {
+    "iniciados": 3,
+    "com_tag_tipo": 1,
+    "tags": [
+     [
+      "FINADOS CRISANTEMOS 2025",
+      2
+     ],
+     [
+      "FLOR DE PRESENTE",
+      1
+     ]
+    ]
+   }
+  },
+  "tags_mais_usadas": [
+   [
+    "FINADOS CRISANTEMOS 2025",
+    2
+   ],
+   [
+    "BUQUES",
+    1
+   ],
+   [
+    "FORRAÇÃO",
+    1
+   ],
+   [
+    "FLOR DE PRESENTE",
+    1
+   ],
+   [
+    "FINADOS 2026",
+    1
+   ]
+  ],
+  "sem_tag_de_tipo": [
+   {
+    "vendedor": "Fernando",
+    "cliente": "Robson Antonio",
+    "telefone": "5581999656528",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "MEYLE | EPEA | Europa Peças",
+    "telefone": "551132974688",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Leticia Kuster",
+    "telefone": "5542991631995",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "FINADOS 2026"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "554298377173",
+    "telefone": "5542998377173",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "FINADOS 2026"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Paulo asis",
+    "telefone": "5542984233700",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "FLOR DE PRESENTE"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Adenilson",
+    "telefone": "5542998742066",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "PLANTAS ORMAMENTAIS"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Neuza",
+    "telefone": "5542998437644",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "FINADOS 2026"
+    ]
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "👍🏻",
+    "telefone": "5542998211063",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Silmara",
+    "telefone": "5542998168257",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Joao",
+    "telefone": "5542984347812",
+    "coluna": "Follow-up 1",
+    "tag_do_contato": [
+     "EUCALIPTO"
+    ]
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Aline Collesel",
+    "telefone": "5542998687375",
+    "coluna": "Follow-up 1",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "INES",
+    "telefone": "5542998180923",
+    "coluna": "Follow-up 2",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Salete",
+    "telefone": "5542999197927",
+    "coluna": "Venda Perdida",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Luana Loja",
+    "telefone": "5542999902654",
+    "coluna": "Não Comercial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "5511911797269",
+    "telefone": "5511911797269",
+    "coluna": "Não Comercial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "554299153204",
+    "telefone": "5542999153204",
+    "coluna": "Não Comercial",
+    "tag_do_contato": []
+   }
+  ],
+  "tag_paisagismo_existe": false
+ },
+ "s8_carga": {
+  "ativos": 200,
+  "por_vendedor": [
+   [
+    "Edimar",
+    91
+   ],
+   [
+    "Carine",
+    46
+   ],
+   [
+    "Douglas",
+    38
+   ],
+   [
+    "Fernando",
+    12
+   ],
+   [
+    "Luana",
+    10
+   ],
+   [
+    "Jaqueline",
+    2
+   ],
+   [
+    "sem dono",
+    1
+   ]
+  ],
+  "serie": {
+   "21/10": {
+    "Edimar": 72,
+    "Carine": 26,
+    "Douglas": 15,
+    "sem dono": 1,
+    "Fernando": 9,
+    "Luana": 3,
+    "Jaqueline": 2
+   },
+   "22/10": {
+    "Carine": 38,
+    "Douglas": 26,
+    "Edimar": 80,
+    "Luana": 10,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "23/10": {
+    "Carine": 41,
+    "Edimar": 88,
+    "Douglas": 30,
+    "Luana": 1,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "26/10": {
+    "Douglas": 44,
+    "Carine": 32,
+    "Edimar": 101,
+    "Luana": 6,
+    "Fernando": 9,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "27/10": {
+    "Edimar": 96,
+    "Carine": 28,
+    "Douglas": 31,
+    "Luana": 10,
+    "Fernando": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "28/10": {
+    "Carine": 46,
+    "Edimar": 91,
+    "Fernando": 12,
+    "Douglas": 38,
+    "Luana": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   }
+  }
+ },
+ "s9_pedidos_ontem": {
+  "pedidos_anteriores": [
+   {
+    "texto": "Incógnita com conversa: Luana Noeli, Cirlei, Daniele Cliente Pedras, Luiz Eduardo Sobutka → Venda Perdida; Marilza → Venda Efetivada; Adriana → coluna Venda Perdida",
+    "telefones": [
+     "5542999126640",
+     "5542999258257",
+     "5541996796189",
+     "5542984441268",
+     "5542984184515",
+     "5542999439010"
+    ]
+   },
+   {
+    "texto": "Atendimento Inicial: 8 cards parados há mais de 3 dias",
+    "telefones": []
+   },
+   {
+    "texto": "Arquivar os 5 cards duplicados arrastados: shaianadebora, Adriana Assistência Social, Poli, Sil, Marli Gil",
+    "telefones": [
+     "5542991538401",
+     "5542920013240",
+     "5542998288943",
+     "5542998510806",
+     "5542998375842"
+    ]
+   },
+   {
+    "texto": "Tag de tipo nas vendas sem tag: Daniele Bonin Carneiro, PEREIRA, cristianoxtz33 (+ coluna Venda Efetivada)",
+    "telefones": [
+     "5542998480717",
+     "5542999795879",
+     "5542991177719"
+    ]
+   }
+  ],
+  "situacao": [
+   {
+    "telefone": "5541996796189",
+    "cliente": "Daniele Cliente Pedras",
+    "vendedor": "Edimar",
+    "coluna": "Incógnita",
+    "status": "CANCELLED",
+    "valor": null,
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542920013240",
+    "cliente": "Adriana Assistência Social Prefeitura Fernandes",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "OPEN",
+    "valor": "120.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542920013240",
+    "cliente": "Adriana Assistência Social Prefeitura Fernandes",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "LOST",
+    "valor": null,
+    "motivo_perda": "parou de responder, reativei e nao tive retorno"
+   },
+   {
+    "telefone": "5542984184515",
+    "cliente": "Marilza Sidnoski",
+    "vendedor": "Douglas",
+    "coluna": "Incógnita",
+    "status": "WON",
+    "valor": "90.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542984441268",
+    "cliente": "Luiz Eduardo Sobutka",
+    "vendedor": "Carine",
+    "coluna": "Incógnita",
+    "status": "CANCELLED",
+    "valor": "80.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542991177719",
+    "cliente": "cristianoxtz33",
+    "vendedor": "Carine",
+    "coluna": "Incógnita",
+    "status": "CANCELLED",
+    "valor": "192.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542991538401",
+    "cliente": "shaianadebora",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "OPEN",
+    "valor": "45.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542991538401",
+    "cliente": "shaianadebora",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "LOST",
+    "valor": null,
+    "motivo_perda": "desistiu da compra pois mora em outra cidade, nao quis deixar pago para a reserva e mandou liberar para a venda"
+   },
+   {
+    "telefone": "5542998288943",
+    "cliente": "Poli",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "LOST",
+    "valor": "80.00",
+    "motivo_perda": "desistiu da compra"
+   },
+   {
+    "telefone": "5542998288943",
+    "cliente": "Poli",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "OPEN",
+    "valor": "55.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542998375842",
+    "cliente": "Marli Gil 👨‍👩‍👦‍👦",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "LOST",
+    "valor": "160.00",
+    "motivo_perda": "CLIENTE ENCONTROU MAIS BARATO"
+   },
+   {
+    "telefone": "5542998375842",
+    "cliente": "Marli Gil 👨‍👩‍👦‍👦",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "OPEN",
+    "valor": "160.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542998480717",
+    "cliente": "Daniele Bonin Carneiro",
+    "vendedor": "Edimar",
+    "coluna": "Venda Efetivada",
+    "status": "WON",
+    "valor": "339.75",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542998510806",
+    "cliente": "Sil",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "LOST",
+    "valor": "25.00",
+    "motivo_perda": "nao quis mais comprar "
+   },
+   {
+    "telefone": "5542998510806",
+    "cliente": "Sil",
+    "vendedor": "Carine",
+    "coluna": "Venda Perdida",
+    "status": "OPEN",
+    "valor": "25.00",
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542999126640",
+    "cliente": "Luana Noeli",
+    "vendedor": "Edimar",
+    "coluna": "Incógnita",
+    "status": "CANCELLED",
+    "valor": null,
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542999258257",
+    "cliente": "Cirlei",
+    "vendedor": "Douglas",
+    "coluna": "Incógnita",
+    "status": "CANCELLED",
+    "valor": null,
+    "motivo_perda": null
+   },
+   {
+    "telefone": "5542999439010",
+    "cliente": "Adriana",
+    "vendedor": "Douglas",
+    "coluna": "Incógnita",
+    "status": "LOST",
+    "valor": "88.00",
+    "motivo_perda": "cliente optou por comprar roupa "
+   },
+   {
+    "telefone": "5542999795879",
+    "cliente": "PEREIRA",
+    "vendedor": "Carine",
+    "coluna": "Venda Efetivada",
+    "status": "WON",
+    "valor": "120.00",
+    "motivo_perda": null
+   }
+  ]
+ },
+ "pedidos_amanha": [
+  {
+   "texto": "Confirmar cristianoxtz33 (R$ 192): estava como venda e foi para a Incógnita",
+   "telefones": [
+    "5542991177719"
+   ]
+  },
+  {
+   "texto": "Regra nova: Lucia Santos e Marilza → Venda Efetivada; Elison, Daniele Cliente Pedras, Luiz Eduardo → Venda Perdida com valor; Adriana → coluna Venda Perdida",
+   "telefones": [
+    "5542998060547",
+    "5542984184515",
+    "5542999556499",
+    "5541996796189",
+    "5542984441268",
+    "5542999439010"
+   ]
+  },
+  {
+   "texto": "Tag de tipo nos 7 cards em Vendedores sem tag e nas vendas de 28/10 (Lucas F, Rosenildo, Adriane)",
+   "telefones": [
+    "5542991631995",
+    "5542998377173",
+    "5542984233700",
+    "5542998742066",
+    "5542998437644",
+    "5542998211063",
+    "5542998168257",
+    "5542988449928",
+    "5542991330339",
+    "5542998242199"
+   ]
+  },
+  {
+   "texto": "Arquivar os 6 cards duplicados: Salete, shaianadebora, Adriana Assistência Social, Poli, Sil, Marli Gil",
+   "telefones": [
+    "5542999197927",
+    "5542991538401",
+    "5542920013240",
+    "5542998288943",
+    "5542998510806",
+    "5542998375842"
+   ]
+  }
+ ],
+ "edicao": 7
+}
