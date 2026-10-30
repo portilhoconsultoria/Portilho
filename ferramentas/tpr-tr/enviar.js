@@ -1,6 +1,6 @@
 // Envia o PDF do relatório ao Fernando pelo DKW da Portilho (empresa 7061, nunca o da cliente).
 // Autorizado pelo Jhonatan em 22/10/2026. Uso: node enviar.js <pdf> <legenda> [--teste]
-// --teste: só localiza a conversa e mostra o que enviaria, sem enviar.
+// --teste: só localiza a conversa e mostra o que enviaria, sem enviar. <pdf> = "-" manda só o texto.
 const { open } = require('./common');
 const { login } = require('./pers');
 const fs = require('fs'), path = require('path');
@@ -22,14 +22,16 @@ const NUMERO = '5542999589335';  // Fernando - Verdes Plantas (contato 5517468)
     if (!doFernando.length) return { erro: 'conversa do Fernando não encontrada' };
     const ticket = doFernando[0].id;
     if (teste) return { teste: true, ticket, status: doFernando[0].status, contato: doFernando[0].contact.name };
-    const bin = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
     const fd = new FormData();
-    fd.append('medias', new File([bin], nome, { type: 'application/pdf' }), nome);
+    if (b64) {  // sem PDF ("-"): manda só o texto
+      const bin = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+      fd.append('medias', new File([bin], nome, { type: 'application/pdf' }), nome);
+    }
     fd.append('body', legenda);
     fd.append('fromMe', true);
     const res = await fetch('https://api.integrador-crm.com/messages/' + ticket, { method: 'POST', headers: h, body: fd });
     return { ticket, status: res.status, ok: res.ok };
-  }, { b64: fs.readFileSync(pdf).toString('base64'), nome: path.basename(pdf), legenda, numero: NUMERO, teste: flag === '--teste' });
+  }, { b64: pdf === '-' ? '' : fs.readFileSync(pdf).toString('base64'), nome: pdf === '-' ? '' : path.basename(pdf), legenda, numero: NUMERO, teste: flag === '--teste' });
   console.log(JSON.stringify(r));
   await ctx.close();
   if (r.erro || (r.status && !r.ok)) process.exit(1);

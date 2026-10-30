@@ -18,4 +18,11 @@ test -f "$OUT/meta.json"
 NODE_PATH=$(npm root -g) node coletar_edicao.js "$DIA" "$OUT" "$FONES" | grep -E '^\{|ERRO' || true
 test -f "$OUT/meta_edicao.json"
 python3 -I dados_edicao.py "$OUT" "$DIA" ${ANT:+"$ANT"} > "$OUT/dados.json"
+# pendências (PDF à parte, desde 30/10): conversas abertas + contatos, e a lista acumulada
+NODE_PATH=$(npm root -g) node coletar_pendencias.js "$OUT" | grep -E '^\{|ERRO' || true
+test -f "$OUT/meta_pendencias.json"
+PANT=$(ls -1 ../../relatorios/pendencias/pendencias_*.json 2>/dev/null | grep -v "_$DIA" | tail -1 || true)
+python3 -I pendencias.py "$OUT" "$DIA" ${PANT:+"$PANT"} > "$OUT/pendencias.json"
+mkdir -p ../../relatorios/pendencias && cp "$OUT/pendencias.json" "../../relatorios/pendencias/pendencias_$DIA.json"
+python3 -I pendencias.py --md "$OUT/pendencias.json" > "../../relatorios/pendencias/Pendencias_Comercial_$DIA.md"
 echo "$OUT/dados.json"
