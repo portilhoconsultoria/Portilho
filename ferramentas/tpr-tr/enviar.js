@@ -29,7 +29,9 @@ const NUMERO = '5542999589335';  // Fernando - Verdes Plantas (contato 5517468)
     }
     fd.append('body', legenda);
     fd.append('fromMe', true);
-    const res = await fetch('https://api.integrador-crm.com/messages/' + ticket, { method: 'POST', headers: h, body: fd });
+    // só texto: a API grava mensagem de texto via JSON (FormData sem anexo responde 200 e não grava — 30/10)
+    const res = b64 ? await fetch('https://api.integrador-crm.com/messages/' + ticket, { method: 'POST', headers: h, body: fd })
+      : await fetch('https://api.integrador-crm.com/messages/' + ticket, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ body: legenda, fromMe: true }) });
     return { ticket, status: res.status, ok: res.ok };
   }, { b64: pdf === '-' ? '' : fs.readFileSync(pdf).toString('base64'), nome: pdf === '-' ? '' : path.basename(pdf), legenda, numero: NUMERO, teste: flag === '--teste' });
   console.log(JSON.stringify(r));
