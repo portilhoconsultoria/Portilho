@@ -21,5 +21,30 @@
   "coorte_vendas": 12,
   "coorte_aberto": 58,
   "nota": "semana 1 = linha de base; 19–20/10 com limpeza de cards antigos; Ações liberado em 20/10"
+ },
+ "2026-10-26": {
+  "n": 2,
+  "atendimentos_novos": 125,
+  "encerramentos": 176,
+  "por_acoes": 156,
+  "incognita": 47,
+  "vendas_ok": 57,
+  "valor_vendas": 13068.94,
+  "vendas_devolvidas": 5,
+  "valor_devolvidas": 4672.0,
+  "perdas": 37,
+  "perdas_com_motivo": 35,
+  "tpr_mediana_min": 11.4,
+  "tpr_p90_min": 125.2,
+  "tr_mediana_min": 4.1,
+  "agendamentos_criados": 34,
+  "notas": 218,
+  "notas_com_data": 7,
+  "tags_iniciados": 124,
+  "tags_com_tipo": 27,
+  "carteira_ativa_fim": 268,
+  "coorte_vendas": 15,
+  "coorte_aberto": 84,
+  "nota": "sábado lido até 12h30"
  }
 }
