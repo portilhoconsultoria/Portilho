@@ -1,0 +1,481 @@
+{
+ "dia": "2026-11-02",
+ "coleta": "02/11/2026 18:38",
+ "volume": {
+  "negocios": 6951,
+  "agendamentos": 156,
+  "notas_lidas": 20
+ },
+ "s1_movimento": {
+  "total": 55,
+  "por_destino": [
+   [
+    "Incógnita",
+    18
+   ],
+   [
+    "Venda Perdida",
+    13
+   ],
+   [
+    "Venda Efetivada",
+    8
+   ],
+   [
+    "Atendimento de Vendedores",
+    7
+   ],
+   [
+    "Atendimento Inicial",
+    4
+   ],
+   [
+    "Não Comercial",
+    3
+   ],
+   [
+    "Follow-up 1",
+    2
+   ]
+  ],
+  "anterior_total": 140
+ },
+ "s2_encerramentos": {
+  "encerramentos": 42,
+  "por_acoes": 41,
+  "arrastados": 1,
+  "vendas": 8,
+  "vendas_problema": [],
+  "perdas": 13,
+  "perdas_sem_motivo": [],
+  "incognita_com_sinal": [],
+  "acumulado": {
+   "perdida_sem_motivo": 1078,
+   "efetivada_sem_valor": 434,
+   "ganho_status_won_fora_da_efetivada": 128
+  },
+  "serie_acumulado": {
+   "18/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "20/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "21/10": {
+    "perdida_sem_motivo": 1095,
+    "efetivada_sem_valor": 445,
+    "ganho_status_won_fora_da_efetivada": 124
+   },
+   "22/10": {
+    "perdida_sem_motivo": 1090,
+    "efetivada_sem_valor": 444,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "23/10": {
+    "perdida_sem_motivo": 1086,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "26/10": {
+    "perdida_sem_motivo": 1083,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 130
+   },
+   "27/10": {
+    "perdida_sem_motivo": 1084,
+    "efetivada_sem_valor": 440,
+    "ganho_status_won_fora_da_efetivada": 131
+   },
+   "28/10": {
+    "perdida_sem_motivo": 1085,
+    "efetivada_sem_valor": 438,
+    "ganho_status_won_fora_da_efetivada": 130
+   },
+   "29/10": {
+    "perdida_sem_motivo": 1082,
+    "efetivada_sem_valor": 436,
+    "ganho_status_won_fora_da_efetivada": 136
+   },
+   "30/10": {
+    "perdida_sem_motivo": 1081,
+    "efetivada_sem_valor": 435,
+    "ganho_status_won_fora_da_efetivada": 134
+   },
+   "02/11": {
+    "perdida_sem_motivo": 1078,
+    "efetivada_sem_valor": 434,
+    "ganho_status_won_fora_da_efetivada": 128
+   }
+  }
+ },
+ "s3_followup": {
+  "cards_fu": 150,
+  "com_agendamento": 25,
+  "sem": 125,
+  "pendentes_base": 33,
+  "historico_base": 156,
+  "serie": {
+   "20/10": {
+    "fu": 71,
+    "com_agendamento": 2
+   },
+   "21/10": {
+    "fu": 80,
+    "com_agendamento": 6
+   },
+   "22/10": {
+    "fu": 81,
+    "com_agendamento": 4
+   },
+   "23/10": {
+    "fu": 87,
+    "com_agendamento": 6
+   },
+   "26/10": {
+    "fu": 106,
+    "com_agendamento": 10
+   },
+   "27/10": {
+    "fu": 109,
+    "com_agendamento": 12
+   },
+   "28/10": {
+    "fu": 125,
+    "com_agendamento": 10
+   },
+   "29/10": {
+    "fu": 128,
+    "com_agendamento": 15
+   },
+   "30/10": {
+    "fu": 155,
+    "com_agendamento": 14
+   },
+   "02/11": {
+    "fu": 150,
+    "com_agendamento": 25
+   }
+  }
+ },
+ "s4_notas": {
+  "total": 1,
+  "por_autor": [
+   [
+    "Edimar",
+    1
+   ]
+  ],
+  "com_data": []
+ },
+ "s5_coluna": {
+  "por_coluna": [
+   [
+    "Atendimento Inicial",
+    12
+   ],
+   [
+    "Atendimento de Vendedores",
+    42
+   ],
+   [
+    "Follow-up 1",
+    63
+   ],
+   [
+    "Follow-up 2",
+    87
+   ]
+  ],
+  "atendimento": 54,
+  "dormiram": 43
+ },
+ "s6_tempo_resposta": {
+  "resumo": {
+   "TPR": {
+    "Carine": {
+     "respondidos": 0,
+     "mediana_min": null,
+     "p90_min": null,
+     "sem_resposta": 1,
+     "sem_resposta_mediana_aberto_min": 600.0,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 5,
+     "mediana_min": 16.266016666666665,
+     "p90_min": 40.676293333333334,
+     "sem_resposta": 1,
+     "sem_resposta_mediana_aberto_min": 97.88351666666668,
+     "aguardando_abertura": 0
+    },
+    "Fernando": {
+     "respondidos": 7,
+     "mediana_min": 8.738133333333334,
+     "p90_min": 26.359856666666673,
+     "sem_resposta": 2,
+     "sem_resposta_mediana_aberto_min": 493.25258333333335,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 12,
+     "mediana_min": 12.772208333333332,
+     "p90_min": 32.40969333333334,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 493.25258333333335,
+     "aguardando_abertura": 0
+    }
+   },
+   "TR": {
+    "Carine": {
+     "respondidos": 0,
+     "mediana_min": null,
+     "p90_min": null,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 387.03338333333335,
+     "aguardando_abertura": 0
+    },
+    "Douglas": {
+     "respondidos": 0,
+     "mediana_min": null,
+     "p90_min": null,
+     "sem_resposta": 1,
+     "sem_resposta_mediana_aberto_min": 538.8023666666667,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 10,
+     "mediana_min": 5.6169,
+     "p90_min": 34.85899,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 176.48771666666667,
+     "aguardando_abertura": 0
+    },
+    "Fernando": {
+     "respondidos": 25,
+     "mediana_min": 7.692216666666667,
+     "p90_min": 34.81481333333334,
+     "sem_resposta": 3,
+     "sem_resposta_mediana_aberto_min": 309.72565000000003,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 35,
+     "mediana_min": 6.6242833333333335,
+     "p90_min": 35.548053333333336,
+     "sem_resposta": 12,
+     "sem_resposta_mediana_aberto_min": 337.31622500000003,
+     "aguardando_abertura": 0
+    }
+   }
+  },
+  "fora_expediente": {},
+  "mensagens_lidas": 1146,
+  "meta_tpr_min": 4,
+  "proposta_tr_min": 15
+ },
+ "s7_tags": {
+  "iniciados": 9,
+  "com_tag_tipo": 0,
+  "por_vendedor": {
+   "Edimar": {
+    "iniciados": 5,
+    "com_tag_tipo": 0,
+    "tags": []
+   },
+   "Fernando": {
+    "iniciados": 4,
+    "com_tag_tipo": 0,
+    "tags": []
+   }
+  },
+  "tags_mais_usadas": [],
+  "sem_tag_de_tipo": [
+   {
+    "vendedor": "Edimar",
+    "cliente": "Ieda R. S. Waydzik",
+    "telefone": "5542999112288",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "andressa🫶🏻",
+    "telefone": "5542999252456",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": ".",
+    "telefone": "5542999374633",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "GRAMA"
+    ]
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Yasmin",
+    "telefone": "5542998424374",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Bruna Brodoviski",
+    "telefone": "5542999478202",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Buque11",
+    "telefone": "5542984045273",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "554298668696",
+    "telefone": "5542998668696",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "PAISAGISMO"
+    ]
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Sólida  engenharia.",
+    "telefone": "5547997044024",
+    "coluna": "Follow-up 1",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "😘😘😘😘",
+    "telefone": "5542998119905",
+    "coluna": "Venda Efetivada",
+    "tag_do_contato": []
+   }
+  ],
+  "tag_paisagismo_existe": false
+ },
+ "s8_carga": {
+  "ativos": 204,
+  "por_vendedor": [
+   [
+    "Edimar",
+    104
+   ],
+   [
+    "Carine",
+    43
+   ],
+   [
+    "Douglas",
+    28
+   ],
+   [
+    "Fernando",
+    21
+   ],
+   [
+    "Luana",
+    8
+   ]
+  ],
+  "serie": {
+   "21/10": {
+    "Edimar": 72,
+    "Carine": 26,
+    "Douglas": 15,
+    "sem dono": 1,
+    "Fernando": 9,
+    "Luana": 3,
+    "Jaqueline": 2
+   },
+   "22/10": {
+    "Carine": 38,
+    "Douglas": 26,
+    "Edimar": 80,
+    "Luana": 10,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "23/10": {
+    "Carine": 41,
+    "Edimar": 88,
+    "Douglas": 30,
+    "Luana": 1,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "26/10": {
+    "Douglas": 44,
+    "Carine": 32,
+    "Edimar": 101,
+    "Luana": 6,
+    "Fernando": 9,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "27/10": {
+    "Edimar": 96,
+    "Carine": 28,
+    "Douglas": 31,
+    "Luana": 10,
+    "Fernando": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "28/10": {
+    "Carine": 46,
+    "Edimar": 91,
+    "Fernando": 12,
+    "Douglas": 38,
+    "Luana": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "29/10": {
+    "Carine": 59,
+    "Edimar": 86,
+    "Douglas": 37,
+    "Luana": 15,
+    "Fernando": 14,
+    "sem dono": 2,
+    "Jaqueline": 2
+   },
+   "30/10": {
+    "Carine": 69,
+    "Douglas": 47,
+    "Edimar": 104,
+    "Luana": 11,
+    "Fernando": 14,
+    "sem dono": 2,
+    "Jaqueline": 2
+   },
+   "02/11": {
+    "Edimar": 104,
+    "Fernando": 21,
+    "Douglas": 28,
+    "Carine": 43,
+    "Luana": 8
+   }
+  }
+ },
+ "s9_pedidos_ontem": {
+  "pedidos_anteriores": [
+   {
+    "texto": "Pendências no PDF 'Pendências do comercial' (relatorios/pendencias/pendencias_2026-10-30.json)",
+    "telefones": []
+   }
+  ],
+  "situacao": []
+ },
+ "pedidos_amanha": []
+}
