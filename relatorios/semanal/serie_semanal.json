@@ -46,5 +46,32 @@
   "coorte_vendas": 15,
   "coorte_aberto": 84,
   "nota": "sábado lido até 12h30"
+ },
+ "2026-11-02": {
+  "n": 3,
+  "atendimentos_novos": 110,
+  "encerramentos": 248,
+  "por_acoes": 245,
+  "incognita": 55,
+  "vendas_ok": 49,
+  "valor_vendas": 12454.26,
+  "perdas": 105,
+  "perdas_com_motivo": 105,
+  "perdas_sem_valor": 6,
+  "perdas_nao_temos": 13,
+  "tpr_mediana_min": 28.5,
+  "tpr_p90_min": 314.9,
+  "tpr_sem_resposta": 53,
+  "tr_mediana_min": 3.2,
+  "agendamentos_criados": 20,
+  "agendamentos_enviados": 68,
+  "notas": 78,
+  "notas_com_data": 0,
+  "tags_iniciados": 110,
+  "tags_com_tipo": 51,
+  "carteira_ativa_fim": 230,
+  "coorte_vendas": 17,
+  "coorte_aberto": 73,
+  "nota": "sábado lido até 12h25; 02/11 feriado (Finados); vendas por última movimentação (soma dos diários seg–sex R$ 14.724,65)"
  }
 }
