@@ -113,7 +113,7 @@ Fechadas com o Fernando em 20/10/2026:
 
 1. **Encerramento só por Ações** — venda ganha (com valor), venda perdida (com motivo), incógnita, não comercial. Arrastar a coluna **não contabiliza**.
 2. **Manutenção × encerramento:** arrastar coluna é manutenção (Atendimento → Vendedores → FU1 → FU2); Ações é encerramento.
-3. **Todo card em Follow-up precisa de mensagem agendada.**
+3. **Todo card em Follow-up precisa de mensagem agendada.** Definição de FU1/FU2 revista em 10/11 (seção 5-0): FU1 = aguardando o cliente; FU2 = respondeu e renegociou; sem contato = Venda Perdida.
 4. **Coluna Atendimento esvaziada todo dia** — só quem está em atendimento naquele dia.
 5. **Nota com data.** `parou de responder, reativei · retorno dia 23`.
 6. **Incógnita só para quem não se sabe o que aconteceu.** Se a nota diz que comprou → Venda Efetivada; se diz por que perdeu → Venda Perdida com motivo.
@@ -124,9 +124,56 @@ Expediente: **segunda a sexta, 08:00–18:00**. Sábado não publicado — fica 
 
 ---
 
+## 5-0. NOVA ORDEM DO RELATÓRIO (Jhonatan, 10/11/2026) — vale a partir da edição nº 16
+
+**Regra:** primeiro **tudo o que o Fernando pediu** (Parte 1), depois **as leituras da Portilho** (Parte 2). Por ora só se acrescenta; o corte de páginas será decidido numa reunião do Jhonatan com o Fernando (hoje são 3–4 páginas, o que é demais). Os números saem de `dados_edicao.py` (chaves abaixo).
+
+**FU1/FU2 — definição nova (reunião de 10/11, transcrição Fireflies 01M72VEB2FBE1G2PTE13C5STDA). Substitui "FU1 = D+2, FU2 = D+7":**
+- **FU1** = aguardando o cliente. Todo card precisa de mensagem agendada. Se o cliente não respondeu, **continua no FU1** com nova mensagem agendada.
+- **FU2** = só quem respondeu e renegociou (lead quente, "pré-acertado"). Também é imprescindível ter mensagem agendada. **O FU2 é mais importante que o FU1.**
+- Sem contato nenhum → **Venda Perdida**, não FU2.
+- O critério é **interação, não tempo nem produto**.
+- **Série:** FU1+FU2 somados até 09/11 (referência). Separados desde 10/11. A **meta** (100% com mensagem agendada) só vale **a partir do treinamento** com os três vendedores, que ainda não tem data. Declarar isso no relatório; não trocar a série em silêncio.
+
+**Rodízio:** Carine 40% · Douglas 40% · Edimar 20%, desde 27/10. O Edimar foi reduzido de propósito, para focar grama e eucalipto. Fernando, Luana e Jaqueline ficam **fora do rodízio** e aparecem sempre separados. Comparação justa: **taxas primeiro** (tempo de resposta, % encerrado pelo Ações, conversão), **volume como contexto** — as duas visões. Princípio do Jhonatan: **"quem está fazendo melhor recebe mais"**.
+
+**PARTE 1 — O QUE VOCÊ PEDIU** (cada bloco cita a data do pedido):
+1. **Atendimentos novos por vendedor × tempo de resposta** (10/11: "não estão vencendo responder"). Chave `s6b_entrada`.
+   - Cliente novo contado **por quem deu a 1ª resposta**, com "mesmo dono do card?" (sim/não, e de quem era). Isso também mede o pedido de transferência automática de 03/11.
+   - Sem resposta conta para o dono do card. Rodízio e fora do rodízio em tabelas separadas.
+   - Ao lado, os cards criados no dia por dono (`s7_tags.por_vendedor.iniciados`), que é o que o rodízio entregou.
+   - Atenção: "cliente novo" do TPR = escreveu sem conversa humana nas últimas 24 h (inclui cliente antigo que volta); "card criado" é outra contagem. Não misturar.
+2. **Follow-up 2 e Follow-up 1, separados — FU2 primeiro** (10/11 e 27/10). Chave `s3_followup.fu2/fu1` (cards, com agendamento, com nota, por vendedor) e a série `serie_separada`. A nota de série vai no texto.
+3. **Motivo da perda: preenchimento e qualidade** (10/11: "quantos por cento das perdas não têm"). Chave `s8b_motivo_perda`.
+   - % com motivo e % com valor, no dia e desde 20/10.
+   - Categorias. Destacar **"cliente sem retorno (não explica a perda)"**: está preenchido, mas não explica.
+   - É classificação por palavra-chave: dizer que é aproximada.
+4. **Distribuição 40/40/20 e desempenho por vendedor — taxas e volume** (27/10 e 10/11). Chave `s8c_desempenho`.
+   - Por vendedor: tempo de resposta, sem resposta, % pelo Ações, vendas (n e R$), conversão entre encerrados, carteira.
+   - Edimar: o que mais fatura e o que menos organiza (leitura do Fernando, 10/11) — mostrar valor ao lado de organização.
+5. **Encerramento pelo Ações e regra da Incógnita** (20/10 e 28/10). Seção 2 antiga.
+6. **Cards parados no Atendimento Inicial** (27/10: "prazo máximo"). Seção 5 antiga.
+7. **Feito e pendente — PDF de pendências** (30/10). Resumo e as 3 prioridades.
+   - O PDF agora separa **FU2 sem agenda** (logo após "venda reaberta") de **FU1 sem agenda**.
+   - Inclui as conversas abertas nas colunas de encerramento e os avisos da Maria.
+8. **Pontos de configuração que ele levantou** (03/11), só o que dá para medir. Chave `s8d_automacoes`.
+   - A ação 55993 disparou? (`acao_55993_disparou`).
+   - Disparos de boas-vindas (46387), Raspinha (56000) e "obrigado".
+   - Vendas que voltaram ao atendimento (o card que volta).
+
+**PARTE 2 — LEITURAS DA PORTILHO:**
+- tags;
+- notas;
+- carga total;
+- os casos de card que volta (Ivair etc.);
+- o que mais a leitura do dia mostrar;
+- "Como este relatório é feito" (com o que não foi medido).
+
+A estrutura antiga abaixo (seções 1–11) continua valendo como definição de cada bloco.
+
 ## 5. ESTRUTURA DO RELATÓRIO DIÁRIO
 
-Destinatário: o dono. Lê em PDF, decide rápido. Título fixo **"Relatório diário do comercial"**, subtítulo `Floricultura Verdes Plantas · movimento de DD/MM/AAAA · edição nº N`. Abre com 2–3 linhas ao Fernando (a novidade do dia, boa primeiro). Ordem das seções — **manter sempre**:
+Destinatário: o dono. Lê em PDF, decide rápido. Título fixo **"Relatório diário do comercial"**, subtítulo `Floricultura Verdes Plantas · movimento de DD/MM/AAAA · edição nº N`. Abre com 2–3 linhas ao Fernando (a novidade do dia, boa primeiro). Ordem das seções antes de 10/11 (a ordem atual é a da seção 5-0):
 
 **1. O que aconteceu hoje.** Cards movidos no dia (`lastTimeMoved` no dia, horário de Brasília) por destino. Comparar com a edição anterior e dizer a hora do corte.
 
@@ -178,6 +225,8 @@ Fonte: `/messages/{ticketId}` dos tickets dos cards com mensagem no dia. Relógi
 ---
 
 ### 5-B. Análise semanal (desde 27/10/2026)
+
+**Desde 10/11:** a semanal segue a mesma ordem da seção 5-0 (Parte 1 = pedidos do Fernando; Parte 2 = leituras da Portilho). FU2 e FU1 separados, entrada por quem respondeu primeiro, qualidade do motivo da perda e desempenho por vendedor (taxas + volume), agregados na semana.
 
 Pedido do Jhonatan em 27/10: **análise semanal da semana seg–sáb, enviada ao Fernando todo sábado às 13h** (WhatsApp + e-mail, mesmo canal do diário). Tarefa agendada "Análise semanal Verdes Plantas — sábado 13h" acorda a conversa às 12h07 (sáb). A nº 1 é a semana 19–24/10 (linha de base).
 
@@ -245,7 +294,7 @@ Perguntas a fazer ao suporte do DKW quando o ambiente de um cliente ainda não f
 
 1. *"Para cada contato que entra no atendimento inicial, precisamos que gere uma **nova negociação** e siga o fluxo do CRM. Como fazemos isso?"*
 2. *"Como **impedir que um card seja movido manualmente** para Venda Efetivada, Venda Perdida, Não Comercial e Incógnita? Queremos que a entrada nessas colunas só aconteça pelo botão Ações."*
-3. *"O DKW consegue **criar mensagem agendada automaticamente** quando o card entra em Follow-up 1 (D+2) e Follow-up 2 (D+7)?"*
+3. *"O DKW consegue **criar mensagem agendada automaticamente** quando o card entra em Follow-up 1 e Follow-up 2?"* (os prazos D+2/D+7 caíram em 10/11: o critério é interação, não tempo)
 4. *"O card 'Tempo de resposta' (Relatórios › Conversas) mostra segundos rotulados como minutos e conta mensagem automática — podem corrigir e documentar `userIds` na API?"* (mensagem pronta em `comunicacoes/2026-10-21_dkw_tempo-de-resposta.md`).
 5. *"É possível tornar a tag de tipo de atendimento obrigatória ao mover o card de Atendimento Inicial?"* (sustenta a regra 8).
 

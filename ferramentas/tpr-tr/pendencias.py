@@ -13,7 +13,8 @@ Regras (reunião de 28/10 e pedido do Fernando de 30/10):
   não tem outro card ativo.
 - venda_reaberta: card com status de ganho/encerrado de volta ao Atendimento Inicial ou de Vendedores.
 - venda_fora: ganho (WON) fora da Venda Efetivada, movido desde 21/10 (20/10 foi a limpeza).
-- followup_sem_agenda: card em Follow-up 1/2 sem mensagem agendada pendente.
+- fu2_sem_agenda / fu1_sem_agenda: card em Follow-up 2 / 1 sem mensagem agendada pendente (separados desde 10/11;
+  FU2 = cliente que respondeu e renegociou, prioridade maior. Itens antigos "followup_sem_agenda" mantêm o "desde").
 - parado_inicial: card no Atendimento Inicial sem movimento há mais de 1 dia útil (avisos da Maria à parte).
 - sem_tag: card criado desde 28/10 já em Vendedores ou adiante, sem tag de tipo (só cards com conversa no dia).
 """
@@ -30,11 +31,12 @@ DESDE_ACOES = datetime(2026, 10, 21, tzinfo=BRT)  # 20/10 foi o dia da limpeza, 
 DESDE_TAG = datetime(2026, 10, 28, tzinfo=BRT)
 O_QUE = {
     "venda_reaberta": "Venda voltou ao atendimento: responder e devolver para Venda Efetivada (Ações → Venda ganha). Não reencerrar na Incógnita",
+    "fu2_sem_agenda": "Follow-up 2 sem mensagem agendada: é cliente que já respondeu e renegociou — agendar a próxima mensagem com dia e hora",
     "venda_fora": "Ganho fora da Venda Efetivada: mover para Venda Efetivada",
     "encerrar_acoes": "Card arrastado: encerrar pelo Ações (status, motivo e valor); se for duplicado, arquivar",
     "encerrar_conversa": "Card encerrado com a conversa aberta: finalizar o atendimento em Conversas",
     "parado_inicial": "Parado no Atendimento Inicial há mais de 1 dia útil: atender ou repassar",
-    "followup_sem_agenda": "Follow-up sem mensagem agendada: agendar com dia e hora",
+    "fu1_sem_agenda": "Follow-up 1 sem mensagem agendada: agendar a próxima tentativa; sem contato nenhum, encerrar como Venda Perdida",
     "sem_tag": "Sem tag de tipo: classificar",
 }
 ORDEM = list(O_QUE)
@@ -82,7 +84,7 @@ def main(d, dia, anterior=None):
                 and not ativos_por_contato[o["contactId"]]):
             add("encerrar_conversa", o)
         if o["step"] in (36971, 113074) and o["contactId"] not in agendado:
-            add("followup_sem_agenda", o, f"na coluna há {(corte - mov).days} dia(s)" if mov else "")
+            add("fu2_sem_agenda" if o["step"] == 113074 else "fu1_sem_agenda", o, f"na coluna há {(corte - mov).days} dia(s)" if mov else "")
         if o["step"] == 44341 and o["status"] in (None, "OPEN") and mov and dias_uteis(mov, corte) > 1:
             add("parado_inicial", o, ("aviso da Maria? " if o["userId"] == 28637 else "") + f"{dias_uteis(mov, corte)} dias úteis")
         if (o["step"] not in (44341,) and o["id"] in tags and ts(o["createdAt"]) >= DESDE_TAG
@@ -91,11 +93,25 @@ def main(d, dia, anterior=None):
 
     prev = {}
     if anterior and os.path.exists(anterior):
-        prev = {i["chave"]: i for i in json.load(open(anterior)).get("itens", [])}
+        prev = {}
+        for i in json.load(open(anterior)).get("itens", []):
+            if i["tipo"] == "followup_sem_agenda":  # tipo antigo (até 09/11): vale para FU1 e FU2
+                for novo in ("fu1_sem_agenda", "fu2_sem_agenda"):
+                    prev[f"{novo}:{i['card']}"] = dict(i, tipo=novo, chave=f"{novo}:{i['card']}", _alias=i["chave"])
+            else:
+                prev[i["chave"]] = i
     hoje = {i["chave"] for i in itens}
     for i in itens:
         i["desde"] = prev[i["chave"]]["desde"] if i["chave"] in prev else dia
-    feitos = [dict(p, feito_em=dia) for k, p in prev.items() if k not in hoje]
+    vivos = {p.get("_alias") for k, p in prev.items() if k in hoje and p.get("_alias")}
+    feitos, vistos = [], set()
+    for k, p in prev.items():
+        orig = p.get("_alias") or k
+        if k in hoje or orig in vivos or orig in vistos:
+            continue
+        vistos.add(orig)
+        feitos.append({**{x: y for x, y in p.items() if x != "_alias"}, "feito_em": dia,
+                       "tipo": "fu2_sem_agenda" if p.get("_alias") and p["coluna"] == "Follow-up 2" else ("fu1_sem_agenda" if p.get("_alias") else p["tipo"])})
     # avisos da Maria: cards do usuário da Luana (28637) levados hoje para Não Comercial; retorno = cliente
     # escreveu depois disso (só cards com conversa no dia, em cards.json/mensagens.json)
     d0 = datetime.fromisoformat(dia).replace(tzinfo=BRT)
@@ -145,7 +161,7 @@ def md(p):
     out.append("")
     curto = {"venda_reaberta": "Venda reaberta", "venda_fora": "Ganho fora", "encerrar_acoes": "Arrastado",
              "encerrar_conversa": "Conversa aberta", "parado_inicial": "Parado no Inicial",
-             "followup_sem_agenda": "FU sem agenda", "sem_tag": "Sem tag"}
+             "fu2_sem_agenda": "FU2 sem agenda", "fu1_sem_agenda": "FU1 sem agenda", "sem_tag": "Sem tag"}
     out.append("Por tipo de pendência:")
     out.append("")
     out.append("| Tipo | " + " | ".join(vend) + " | Total |")
@@ -162,7 +178,8 @@ def md(p):
         out.append("")
     titulos = {"venda_reaberta": "Vendas que voltaram ao atendimento", "venda_fora": "Ganhos fora da Venda Efetivada",
                "encerrar_acoes": "Cards arrastados — encerrar pelo Ações", "encerrar_conversa": "Cards encerrados com a conversa aberta",
-               "parado_inicial": "Parados no Atendimento Inicial", "followup_sem_agenda": "Follow-up sem mensagem agendada",
+               "parado_inicial": "Parados no Atendimento Inicial", "fu2_sem_agenda": "Follow-up 2 sem mensagem agendada",
+               "fu1_sem_agenda": "Follow-up 1 sem mensagem agendada",
                "sem_tag": "Sem tag de tipo"}
     for v in vend:
         out.append(f"## {v.upper()}")

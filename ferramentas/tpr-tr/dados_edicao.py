@@ -29,6 +29,26 @@ TAG_TIPO = {"BUQUES", "GRAMA", "FLOR DE PRESENTE", "FLOR DE CORTE", "PLANTAS ORM
 VENDA = re.compile(r"j[aá] fez o pedido|fez o pedido|comprou|vem buscar|vai vir|vai passar|passar na loja|entregamos|"
                    r"veio na loja|veio at[eé] a loja|pagou", re.I)
 PERDA = re.compile(r"achou caro|\bcaro\b|frete|outra cidade|desistiu|n[aã]o vai querer|mais barato|n[aã]o temos|n[aã]o tinha", re.I)
+VENDEDORES = ("Carine", "Douglas", "Edimar")  # rodízio 40/40/20 (Carine/Douglas/Edimar) desde 27/10
+SEM_INFO = re.compile(r"retorno|respond|reponde|reativ|parou|perdido|sumiu|frio|curios|s[oó] cot|n[aã]o efetiv", re.I)
+CAT_PERDA = (("não temos o produto ou a pronta entrega", re.compile(r"pronta|n[aã]o tem|n[aã]o tinha|tinhamos|sem estoque|n[aã]o trabalhamos", re.I)),
+             ("logística (cidade, buscar, entrega, frete)", re.compile(r"frete|outra cidade|enviasse|enviar para|buscar|\bsc\b|entrega", re.I)),
+             ("preço", re.compile(r"\bcaro\b|mais barato|em conta|em virtude do pre|baixando valor|quantidade minima", re.I)),
+             ("comprou em outro lugar", re.compile(r"outra empresa|outro lugar|concorrente|j[aá] conseg|j[aá] compr|deu certo|ganhou|comprar em", re.I)),
+             ("desistiu, adiou ou prazo", re.compile(r"desist|cancel|n[aã]o vai|esse ano|n[aã]o quer|n[aã]o precisa|data|hor[aá]rio|tempo", re.I)))
+
+
+def motivo_cat(m):
+    """Classifica o motivo da perda. 'sem retorno' = motivo preenchido que não explica a perda."""
+    m = (m or "").strip()
+    if len(m) < 3:
+        return "sem motivo"
+    for nomecat, rx in CAT_PERDA:
+        if rx.search(m):
+            return nomecat
+    return "cliente sem retorno (não explica a perda)" if SEM_INFO.search(m) else "outro"
+
+
 DATA = re.compile(r"\b\d{1,2}/\d{1,2}\b|\bdia \d{1,2}\b|amanh|segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|"
                   r"semana que vem|pr[oó]xima semana", re.I)
 
@@ -111,8 +131,21 @@ def main(d, dia, anterior=None):
     com = sum(1 for o in fu if o["contactId"] in cp)
     s3 = dict((prev.get("s3_followup") or {}).get("serie") or {"20/10": {"fu": 71, "com_agendamento": 2}})
     s3[d0.strftime("%d/%m")] = {"fu": len(fu), "com_agendamento": com}
+    fu_sep = {}
+    for st, k in ((113074, "fu2"), (36971, "fu1")):
+        g = [o for o in A if o["step"] == st]
+        pv = defaultdict(lambda: [0, 0])
+        for o in g:
+            pv[nome(o["userId"])][0] += 1
+            pv[nome(o["userId"])][1] += o["contactId"] in cp
+        fu_sep[k] = {"cards": len(g), "com_agendamento": sum(1 for o in g if o["contactId"] in cp),
+                     "com_nota": sum(1 for o in g if NT.get(str(o["id"]))), "por_vendedor": {v: {"cards": x[0], "com_agendamento": x[1]} for v, x in pv.items()}}
+    s3b = dict((prev.get("s3_followup") or {}).get("serie_separada") or {})
+    s3b[d0.strftime("%d/%m")] = {k: {"cards": v["cards"], "com_agendamento": v["com_agendamento"]} for k, v in fu_sep.items()}
     out["s3_followup"] = {"cards_fu": len(fu), "com_agendamento": com, "sem": len(fu) - com,
-                          "pendentes_base": len(pend), "historico_base": len(AG), "serie": s3}
+                          "pendentes_base": len(pend), "historico_base": len(AG), "serie": s3,
+                          "fu2": fu_sep["fu2"], "fu1": fu_sep["fu1"], "serie_separada": s3b,
+                          "nota_serie": "FU1+FU2 somados até 09/11 (referência); separados desde 10/11; meta (FU1 e FU2 com 100% de mensagem agendada) vale a partir do treinamento"}
 
     # 4. notas do dia (nos cards movidos no dia)
     nd = [n for o in mov for n in (NT.get(str(o["id"])) or []) if hoje(n["createdAt"])]
@@ -129,8 +162,38 @@ def main(d, dia, anterior=None):
     out["s6_tempo_resposta"] = {"resumo": tpr_tr.resumo(ev), "fora_expediente": dict(fora),
                                 "mensagens_lidas": meta_t["mensagens"], "meta_tpr_min": 4, "proposta_tr_min": 15}
 
-    # 7. classificação por tag (cards criados no dia)
+    # 6b. atendimentos novos por quem respondeu primeiro × dono do card (pedido do Fernando, 10/11)
     cards = ld("cards.json")
+    dono_t = {str(tk): nome(c["userId"]) for c in cards for tk in c.get("ticketIds") or []}
+    ent = defaultdict(lambda: {"respondidos": 0, "mesmo_dono": 0, "outro_dono": 0, "min": [], "donos_diferentes": Counter()})
+    sem_r = Counter()
+    for kpi, resp, mins, dia_ev, tk, aberto, *_ in ev:
+        if kpi != "TPR":
+            continue
+        dn = dono_t.get(str(tk), "sem card")
+        if mins is None:
+            if aberto and aberto > 0:
+                sem_r[dn] += 1
+            continue
+        e = ent[resp]
+        e["respondidos"] += 1
+        e["min"].append(mins)
+        if dn == resp:
+            e["mesmo_dono"] += 1
+        else:
+            e["outro_dono"] += 1
+            e["donos_diferentes"][dn] += 1
+    rod, fora_rod = {}, {}
+    for v in sorted(set(ent) | set(sem_r)):
+        e = ent.get(v) or {"respondidos": 0, "mesmo_dono": 0, "outro_dono": 0, "min": [], "donos_diferentes": Counter()}
+        r = {"respondidos": e["respondidos"], "mesmo_dono": e["mesmo_dono"], "outro_dono": e["outro_dono"],
+             "donos_diferentes": dict(e["donos_diferentes"]), "mediana_min": tpr_tr.pct(e["min"], 0.5),
+             "p90_min": tpr_tr.pct(e["min"], 0.9), "sem_resposta_no_card_dele": sem_r.get(v, 0)}
+        (rod if v in VENDEDORES else fora_rod)[v] = r
+    out["s6b_entrada"] = {"rodizio": rod, "fora_do_rodizio": fora_rod,
+                          "definicao": "cliente novo (TPR) contado por quem deu a 1ª resposta; 'mesmo dono' = quem respondeu é o dono atual do card; sem resposta conta para o dono do card"}
+
+    # 7. classificação por tag (cards criados no dia)
     novos = [c for c in cards if hoje(c["createdAt"])]
     vistos, base = set(), []
     for c in novos:
@@ -158,6 +221,41 @@ def main(d, dia, anterior=None):
     s8 = dict((prev.get("s8_carga") or {}).get("serie") or {})
     s8[d0.strftime("%d/%m")] = dict(carga)
     out["s8_carga"] = {"ativos": len(ativos), "por_vendedor": carga.most_common(), "serie": s8}
+
+    # 8b. motivo da perda: preenchimento e qualidade (pedido do Fernando, 10/11)
+    desde = datetime(2026, 10, 20, tzinfo=BRT)
+    pacum = [o for o in A if o["step"] == 36613 and o["moved"] and ts(o["moved"]) >= desde]
+    out["s8b_motivo_perda"] = {
+        "dia": {"perdas": len(pe), "com_motivo": sum(1 for o in pe if motivo_cat(o["lostReason"]) != "sem motivo"),
+                "com_valor": sum(1 for o in pe if o["amount"]), "categorias": Counter(motivo_cat(o["lostReason"]) for o in pe).most_common()},
+        "desde_20_10": {"perdas": len(pacum), "com_motivo": sum(1 for o in pacum if motivo_cat(o["lostReason"]) != "sem motivo"),
+                        "com_valor": sum(1 for o in pacum if o["amount"]),
+                        "categorias": Counter(motivo_cat(o["lostReason"]) for o in pacum).most_common()},
+        "definicao": "classificação por palavra-chave do texto do motivo; 'sem retorno' = preenchido, mas não diz por que perdeu"}
+
+    # 8c. desempenho por vendedor — taxas (base para 'quem faz melhor recebe mais') e volume
+    dsp = {}
+    for v in sorted(set(VENDEDORES) | {nome(o["userId"]) for o in fech}):
+        f_v = [o for o in fech if nome(o["userId"]) == v]
+        vd = [o for o in f_v if o["step"] == 32318 and o["status"] == "WON"]
+        pd = [o for o in f_v if o["step"] == 36613]
+        r6 = ent.get(v) or {}
+        dsp[v] = {"novos_recebidos_card": porv[v]["iniciados"] if v in porv else 0,
+                  "novos_respondidos": len(r6.get("min", [])), "tpr_mediana_min": tpr_tr.pct(r6.get("min", []), 0.5),
+                  "sem_resposta": sem_r.get(v, 0), "encerramentos": len(f_v),
+                  "pelo_acoes": sum(1 for o in f_v if o["status"] not in (None, "OPEN")),
+                  "vendas": len(vd), "valor_vendas": round(sum(float(o["amount"] or 0) for o in vd), 2), "perdas": len(pd),
+                  "conversao_encerrados": round(len(vd) / (len(vd) + len(pd)), 3) if (vd or pd) else None,
+                  "carteira": carga.get(v, 0), "rodizio": v in VENDEDORES}
+    out["s8c_desempenho"] = dsp
+
+    # 8d. automações de coluna que dispararam no dia (pedido do Fernando, 03/11: Inicial e Venda ganha não disparam)
+    M = ld("mensagens.json")
+    ca = Counter(m.get("colAuto") for ms in M.values() for m in ms if m.get("colAuto") and hoje(m["at"]))
+    out["s8d_automacoes"] = {"disparos_por_automacao": {str(k): v for k, v in ca.most_common()},
+                             "obrigado_venda_efetivada": sum(1 for ms in M.values() for m in ms
+                                                             if hoje(m["at"]) and "brigado por escolher" in (m.get("body") or "")),
+                             "acao_55993_disparou": ca.get(55993, 0)}
 
     # 9. o que pedi ontem (situação dos contatos acompanhados)
     sit = []
