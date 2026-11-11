@@ -65,15 +65,27 @@ Nomes e e-mails já estão cadastrados no DKW. Funções:
 | Maria | Caixa; dispara avisos de pedido aos clientes (tem usuário próprio) |
 | Thiago Coréas | Configuração do sistema e do agente de IA |
 
-## 6. DO PRIMEIRO CONTATO À VENDA
+## 6. O FUNIL — COLUNA POR COLUNA (BASE DA CONFIGURAÇÃO)
 
-1. **Atendimento Inicial** — cliente chega (é onde a IA vai atuar).
-2. **Atendimento de Vendedores** — negociação acontecendo agora.
-3. **Follow-up 1** — aguardando o cliente. **Todo card precisa de mensagem agendada.** Se o cliente não respondeu, continua no FU1 com nova mensagem agendada.
-4. **Follow-up 2** — só quem **respondeu e renegociou** (lead quente). Também com mensagem agendada. É mais importante que o FU1.
-5. **Encerramento pelo botão Ações:** Venda Efetivada (com valor), Venda Perdida (com motivo e valor), Não Comercial ou Incógnita (produto não identificado).
+Funil **"Verdes Plantas – Gestão do atendimento" (ID 10541)**. Esta é a estrutura que deve existir no DKW.
 
-Sem contato nenhum depois das tentativas → **Venda Perdida**. O critério para mudar de follow-up é **interação, não tempo nem produto**. **Toda conversa nova de um cliente gera uma nova negociação** — nunca reaproveitar card antigo.
+**Regras gerais:**
+- **Toda conversa nova de um cliente gera uma nova negociação (card)** — nunca reaproveitar card antigo, nem de venda ganha. Hoje a automação "Nova oportunidade" das colunas de encerramento devolve o **mesmo card** ao Atendimento Inicial: é a causa do problema 1 da seção 4.
+- **Arrastar é manutenção** (Inicial → Vendedores → FU1 → FU2). **Encerrar é só pelo botão Ações** (status, valor e motivo). Bloquear o arrasto para as 4 colunas de encerramento.
+- **Toda negociação no follow-up tem mensagem agendada.** O critério para mudar de follow-up é **interação, não tempo nem produto**.
+
+| Coluna (ID) | O que é | Como entra | Como sai | Obrigatório / automações |
+|---|---|---|---|---|
+| **Atendimento Inicial** (44341) | Cliente que acabou de chegar. Onde a IA atua | Mensagem nova de cliente (sempre como **negociação nova**); resposta ao funil de disparos (ID 20795) | IA ou vendedor qualifica e move para Vendedores; ou encerra pelo Ações (ex.: Não Comercial) | Boas-vindas (46387) — **um único envio na entrada**. Distribuição pelo rodízio |
+| **Atendimento de Vendedores** (69421) | Negociação acontecendo agora | Qualificado no Inicial | Fecha pelo Ações; ou vai para o FU1 quando a decisão do cliente não é para agora | **Tag de tipo de produto obrigatória** ao entrar (tags = categorias do SIGCLOUD) |
+| **Follow-up 1** (36971) | Aguardando o cliente | Cliente deixou para depois | Cliente respondeu e renegociou → **FU2**; fechou → Ações; sem contato nenhum depois das tentativas → **Venda Perdida** | **Mensagem agendada obrigatória**; se o cliente não respondeu, nova mensagem agendada e continua no FU1. Cancelar o agendamento se o cliente responder antes |
+| **Follow-up 2** (113074) | Só quem **respondeu e renegociou** (lead quente, "pré-acertado"). Mais importante que o FU1 | Vindo do FU1, após nova interação do cliente | Fecha pelo Ações | **Mensagem agendada obrigatória**. Coluna deve ser pequena |
+| **Venda Efetivada** (32318) | Venda ganha | **Só pelo Ações** | — (cliente que volta = negociação nova) | **Valor obrigatório**. Mensagem "Obrigado por escolher a Verdes Plantas"; avaliação do Google (corrigir o loop); automação 55993 (corrigir) |
+| **Venda Perdida** (36613) | Produto identificado e não vendido | **Só pelo Ações** | — | **Motivo e valor (estimado) obrigatórios**. Raspinha (56000) — quem responde vira **negociação nova no Follow-up 1 com tag RASPINHA**, sem receber de novo a mensagem de perda (corrigir o loop) |
+| **Não Comercial** (121919) | Contato sem venda: fornecedor, currículo, aviso de pedido da Maria, assunto alheio | **Só pelo Ações** | — | Se o cliente de um aviso responder querendo comprar, deve virar negociação nova |
+| **Incógnita** (44334) | Produto **não identificado** (cliente sem interação útil) | **Só pelo Ações** | — | Se a nota indica compra ou perda, o card está no lugar errado |
+
+**Em aberto para você propor:** se os avisos de pedido da Maria devem ou não gerar negociação, e como criar a negociação automaticamente quando o cliente responde a um desses avisos querendo comprar.
 
 ## 7. DISTRIBUIÇÃO DOS CLIENTES
 
