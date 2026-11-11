@@ -1,7 +1,7 @@
 # Briefing de configuração do CRM e do agente de IA
 ### Floricultura Verdes Plantas · para Thiago Coréas · 11/11/2026
 
-Thiago, este documento responde ao seu questionário e junta o que você precisa para configurar o CRM (DKW) e o agente de IA da Verdes Plantas. As respostas vêm da reunião com o Fernando em 10/11, das respostas dele por escrito e da leitura diária da base do CRM que a Portilho faz desde outubro. Onde algo ainda precisa ser confirmado com o Fernando, está marcado **(a confirmar)**.
+Thiago, este documento responde ao seu questionário e junta o que você precisa para configurar o CRM (DKW) e o agente de IA da Verdes Plantas. As respostas vêm da reunião com o Fernando em 10/11, das respostas dele por escrito e da leitura diária da base do CRM que a Portilho faz desde outubro.
 
 **Regra de leitura:** onde este documento diverge dos prompts antigos da IA ou da planilha de perguntas e respostas, **vale este documento** — o material antigo é ponto de partida, não está atualizado.
 
@@ -62,7 +62,7 @@ Nomes e e-mails já estão cadastrados no DKW. Funções:
 | Edimar | Vendedor (foco em grama e eucalipto) |
 | Luana | Financeiro |
 | Jaqueline | Conteúdo; hoje praticamente não atende no CRM |
-| Maria | Caixa; dispara avisos de pedido **usando o login da Luana** — falta decidir se terá usuário próprio |
+| Maria | Caixa; dispara avisos de pedido aos clientes (tem usuário próprio) |
 | Thiago Coréas | Configuração do sistema e do agente de IA |
 
 ## 6. DO PRIMEIRO CONTATO À VENDA
@@ -103,9 +103,9 @@ Por categoria, o que já está definido:
 
 Não haverá um documento de regras rígidas: prazos, pedido mínimo e condições **dependem do produto e da negociação**, e ficam com o vendedor. O que já está definido e a IA pode usar:
 
-- **Horário** (a confirmar): segunda a sexta, 8h às 18h; sábado, 8h às 15h; domingo fechado. Retirada ou entrega fora do horário: combinar com o vendedor.
+- **Horário:** segunda a sexta, 8h às 18h; sábado, 8h às 15h; domingo fechado. Retirada ou entrega fora do horário: combinar com o vendedor.
 - **Entrega:** Irati e região (Fernandes Pinheiro, Rebouças, Imbituva, Teixeira Soares, Mallet, Prudentópolis, Rio Azul, Guamiranga, Inácio Martins, Palmeira, Ponta Grossa, Guarapuava, São João do Triunfo). **Grama vai mais longe — já foi vendida até para Curitiba.** O valor do frete é calculado pelo vendedor no orçamento. **Não há entrega por transportadora.** A IA não deve recusar cidade nenhuma: coleta o endereço e passa ao vendedor.
-- **Preço da grama — a IA pode citar o "a partir de":** R$ 10,99/m² acima de 400 m²; R$ 9,99/m² acima de 1.000 m² (a confirmar se estes valores seguem vigentes). Os demais preços ficam com o vendedor.
+- **Preço da grama — a IA pode citar o "a partir de"**, mas o preço muda quase todo dia. **Não usar valor fixo no prompt nem na base** (os valores da planilha antiga já estão desatualizados). Ver o problema e as propostas na seção 12. Os demais preços ficam com o vendedor.
 - **Grama — dados técnicos:** cada m² pesa 20 a 25 kg; 4 blocos por m²; palete de 50 a 55 m²; conferência no carregamento. Capacidade por veículo: Gol 10 m² · Strada 30 m² · VUC/HR 70 m² · F4000 160 m² · Cargo 1319 350–400 m² · Cargo 2429 550 m² · Bitruck 760 m².
 - **Citros:** só mudas certificadas e autorizadas para plantio no Paraná. Variedades não autorizadas (ex.: Laranja Champanhe, Açúcar, Bahia) não se vendem, encomendam nem indicam a terceiros.
 - **Frutíferas para plantio comercial:** a IA encaminha o atendimento para o **Fernando**.
@@ -118,7 +118,7 @@ Não haverá um documento de regras rígidas: prazos, pedido mínimo e condiçõ
 **Papel: SDR (pré-atendimento).** O desenho dos prompts antigos continua valendo na essência:
 
 - **Faz:** acolhe, identifica o produto (inclusive por foto), coleta as informações da seção 8, responde dúvidas com a base de conhecimento, marca o card como QUALIFICADO e passa ao vendedor do rodízio.
-- **Não faz:** não fecha venda, não negocia e não passa preço — **exceto o "a partir de" da grama**. Não pergunta o número de WhatsApp.
+- **Não faz:** não fecha venda, não negocia e não passa preço — **exceto o "a partir de" da grama, sempre lido de uma fonte atualizada no dia** (seção 12). Não pergunta o número de WhatsApp.
 - **Chama uma pessoa quando:** o cliente pede, tem urgência, termina a qualificação, faz pergunta que não está na base, é atacado ou volume grande de grama, ou plantio comercial de frutíferas.
 - **Tom:** curto, humano, uma pergunta por mensagem, sem repetir o que o cliente já disse.
 
@@ -131,7 +131,7 @@ Não haverá um documento de regras rígidas: prazos, pedido mínimo e condiçõ
 | Horários de entrega de sábado até 18h e domingo até 12h; catálogo do Dia das Mulheres | Eram da campanha de março. Usar o horário da seção 9 e o catálogo vigente |
 | Entrega só em Irati, Fernandes Pinheiro e Rebouças | Irati e região; grama vai mais longe; nunca recusar cidade |
 | "Temos sim! … incluindo essa que você procurou" | **Nem negar nem confirmar estoque:** "vou verificar com o vendedor". Produto em falta é a 2ª maior causa de perda registrada — prometer e não ter gera frustração |
-| Nunca falar preço | Pode citar o "a partir de" da grama |
+| Nunca falar preço; planilha com preço fixo da grama | Pode citar o "a partir de" da grama, lido de fonte atualizada no dia — nunca valor fixo |
 
 **O que os dados dizem sobre onde a IA ajuda:** a primeira resposta ao cliente novo variou de 8 a 39 minutos de mediana nos últimos dias, e piora na segunda-feira e no horário das 13h. Mas **60% das perdas registradas são "o cliente parou de responder"** depois do vendedor mandar preço ou foto, e o follow-up quase não tem mensagem agendada. Ou seja: a IA resolve a entrada (responder em segundos, qualificar, classificar); a retomada depois do vendedor continua sendo o maior ponto de perda. O Fernando colocou exatamente essa pergunta — **o sucesso da IA deve ser medido pelo que acontece na fase do vendedor** (conversão e perdas "sem retorno", com e sem IA), não só pela velocidade.
 
@@ -157,6 +157,14 @@ Não haverá um documento de regras rígidas: prazos, pedido mínimo e condiçõ
 3. **Ligar os cadastros** para saber quem foi atendido no online e comprou no balcão — resolve o caso "o cliente não respondeu, mas veio e comprou", que hoje vira perda no CRM.
 4. **Tags do CRM = categorias do SIGCLOUD.**
 
+**Problema para você resolver — preço da grama que muda quase todo dia.** A IA pode dizer "grama a partir de R$ X/m²", mas o valor é atualizado quase diariamente, e um preço velho na boca da IA é pior que nenhum. Caminhos possíveis, do melhor para o mais simples:
+
+1. **A IA consulta o preço direto no SIGCLOUD** (via API, pela integração acima), na hora da conversa.
+2. **Uma fonte única que a empresa atualiza** (por exemplo, uma planilha ou campo no CRM com o preço do dia por faixa de metragem), que a IA lê antes de responder, com a data da última atualização. Se a data não for de hoje, a IA não cita valor.
+3. **Sem fonte confiável:** a IA não cita valor e diz que o vendedor passa o preço do dia.
+
+O mesmo vale para qualquer outro preço que a IA venha a citar no futuro.
+
 **Tintim** — origem do lead; o Fernando quer espelhar CRM × Tintim (alinhar com o Matheus).
 **Power BI** — já conectado ao SIGCLOUD.
 
@@ -170,4 +178,3 @@ Não haverá um documento de regras rígidas: prazos, pedido mínimo e condiçõ
 | Lista de preços | **Não existe fora do SIGCLOUD** — puxar pela integração |
 | Fichas de pedras, terra, mudas ornamentais, palmeiras e paisagismo | **Não existem** — montar a partir da análise das conversas por categoria |
 
-**A confirmar com o Fernando:** horário de funcionamento atual (encontramos versões diferentes); se o preço "a partir de" da grama segue vigente; se a Maria terá usuário próprio.
