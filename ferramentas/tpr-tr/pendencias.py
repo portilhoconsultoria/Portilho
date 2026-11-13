@@ -173,8 +173,8 @@ def md(p):
     out.append("")
     m = p.get("maria") or {}
     if m:
-        out.append(f"**Avisos da Maria (usuário da Luana):** {m['avisos_hoje']} cards levados hoje para Não Comercial. "
-                   f"Clientes desses avisos que voltaram a escrever: {len(m['retornos'])}" + (" — " + ", ".join(f"{r['cliente']} ({r['telefone']})" for r in m['retornos']) if m['retornos'] else "") + ".")
+        out.append(f"**Não Comercial no usuário da Luana:** {m['avisos_hoje']} cards levados hoje. "
+                   f"Clientes desses cards que voltaram a escrever: {len(m['retornos'])}" + (" — " + ", ".join(f"{r['cliente']} ({r['telefone']})" for r in m['retornos']) if m['retornos'] else "") + ".")
         out.append("")
     titulos = {"venda_reaberta": "Vendas que voltaram ao atendimento", "venda_fora": "Ganhos fora da Venda Efetivada",
                "encerrar_acoes": "Cards arrastados — encerrar pelo Ações", "encerrar_conversa": "Cards encerrados com a conversa aberta",
