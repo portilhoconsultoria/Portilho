@@ -73,5 +73,47 @@
   "coorte_vendas": 17,
   "coorte_aberto": 73,
   "nota": "sábado lido até 12h25; 02/11 feriado (Finados); vendas por última movimentação (soma dos diários seg–sex R$ 14.724,65)"
+ },
+ "2026-11-09": {
+  "n": 4,
+  "atendimentos_novos": 154,
+  "encerramentos": 341,
+  "por_acoes": 341,
+  "incognita": 97,
+  "vendas_ok": 77,
+  "valor_vendas": 22723.72,
+  "perdas": 119,
+  "perdas_com_motivo": 119,
+  "perdas_sem_valor": 6,
+  "perdas_sem_retorno": 80,
+  "tpr_mediana_min": 42.7,
+  "tpr_p90_min": 305.0,
+  "tpr_sem_resposta": 35,
+  "tpr_sem_resposta_fora_rodizio": 23,
+  "tr_mediana_min": 3.7,
+  "agendamentos_criados": 41,
+  "agendamentos_enviados": 24,
+  "fu2_com_agenda_sexta": [
+   19,
+   34
+  ],
+  "fu1_com_agenda_sexta": [
+   3,
+   10
+  ],
+  "notas": 198,
+  "notas_com_data": 5,
+  "tags_iniciados": 153,
+  "tags_com_tipo": 91,
+  "carteira_ativa_fim": 184,
+  "entrada_rodizio": {
+   "Carine": 49,
+   "Edimar": 46,
+   "Douglas": 28,
+   "fora": 31
+  },
+  "coorte_vendas": 17,
+  "coorte_aberto": 86,
+  "nota": "sábado lido até 12h27; FU1/FU2 separados desde 10/11"
  }
 }
