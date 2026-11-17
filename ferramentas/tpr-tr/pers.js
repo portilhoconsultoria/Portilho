@@ -35,6 +35,16 @@ async function personify(page) {
   const item = page.getByRole('menuitem', { name: 'Personificar empresa' });
   const email = await page.evaluate(() => (JSON.parse(localStorage.getItem('user')) || {}).email || '');
   if (email) { const u = page.getByText(email.slice(0, 18), { exact: false }).first(); if (await u.count()) { await u.click(); await page.waitForTimeout(1000); } }
+  // layout de 17/11: o bloco do usuário no rodapé mostra só o nome (sem e-mail)
+  if (!(await item.count())) {
+    const nome = await page.evaluate(() => (JSON.parse(localStorage.getItem('user')) || {}).name || '');
+    const n = nome ? page.getByText(nome.slice(0, 14), { exact: false }).last() : null;
+    if (n && await n.count()) { await n.click(); await page.waitForTimeout(1000); }
+    if (!(await item.count())) {
+      const vp = page.viewportSize() || { height: 900 };
+      await page.mouse.click(80, vp.height - 27); await page.waitForTimeout(1000);
+    }
+  }
   // layout antigo: botão do avatar sem rótulo no topo
   for (let i = 0; i < 12 && !(await item.count()); i++) {
     const b = page.locator('button').nth(i);
