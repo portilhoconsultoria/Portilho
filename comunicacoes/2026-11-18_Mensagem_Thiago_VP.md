@@ -15,7 +15,7 @@ Hoje, 18/11, revisei com o Fernando o processo comercial inteiro, do primeiro co
 5. *Cliente que volta:* gerar uma negociação nova, sem duplicar card e sem mexer na venda anterior. Hoje o cliente que volta de Venda Perdida, Efetivada ou Incógnita fica perdido no meio.
 
 *Prioridade 2 — até [data]*
-6. *Rodízio:* a regra do Fernando (12/11, no grupo) é *Jaqueline 40% · Carine 40% · Edimar 20%*, com o Douglas como gestor comercial. Na sua atualização de 14/11 está Carine 40% · Douglas 40% · Edimar 20%. Por favor, alinhe à regra do Fernando.
+6. *Rodízio:* a regra do Fernando (12/11, no grupo) é *Jaqueline 40% · Carine 40% · Edimar 20%*, com o Douglas como coordenador comercial. Na sua atualização de 14/11 está Carine 40% · Douglas 40% · Edimar 20%. Por favor, alinhe à regra do Fernando.
 7. *Vínculo do vendedor:* ao encerrar pelo Ações, o cliente fica sem vendedor no próximo contato.
 8. *Automações com erro:* avaliação do Google, Raspinha e a ação 55993 (erro ERR_NO_DEF_WAPP_FOUND).
 9. *Mensagem agendada:* cancelar quando o cliente responder antes.
@@ -39,4 +39,4 @@ Conto com você.
 - **Teste objetivo:** os itens 3 (coluna única) e 6 (rodízio) são de configuração simples. Se não saírem na primeira data, é sinal claro.
 - **Item 5:** foi ele quem desligou as automações de reaproveitamento em 14/11. Peça que diga como vai resolver, não só "vou testar".
 - **Item 10:** depende do agente de IA, que ele também assumiu. Se ele propuser adiar, aceite só com data.
-- **A confirmar com você:** se a mensagem vai no privado dele ou no grupo do CRM. No grupo, o Fernando vê o compromisso.
+- **Envio:** você revisa e envia ao Thiago.

@@ -124,6 +124,17 @@ Expediente: **segunda a sexta, 08:00–18:00**. Sábado não publicado — fica 
 
 ---
 
+## 5-00. DECISÕES DE 18/11/2026 (reunião Jhonatan × Fernando + respostas do Jhonatan) — valem a partir da edição nº 22
+
+- **Papéis:** Fernando = gestor comercial (acompanha os relatórios do Douglas e certifica que o trabalho é feito). Douglas = **coordenador** comercial (acompanha a execução dos vendedores). Não chamar o Douglas de "gestor".
+- **Rodízio:** regra do Fernando no grupo do CRM (12/11): Jaqueline 40 · Carine 40 · Edimar 20; Douglas fora do rodízio.
+- **Grupo "CRM - Verdes Plantas"** (ticket 9214242 no DKW da Portilho): ler antes de redigir; decisões e mudanças de configuração entram na seção de configuração.
+- **Processo é a base, o relatório mede o processo** (mapa em comunicacoes/2026-11-18_Mapa_Processo_Comercial_VP.md).
+- **Leitura das conversas (conversas.py → conversas.json):** ciclo da venda (início da conversa daquela venda → Venda ganha) por categoria; venda ganha com PDF do pedido, Pix e comprovante; **onde travou** (Incógnita/Venda Perdida do dia) — a classificação automática é 1ª passagem: eu leio os trechos e corrijo antes de publicar; o Douglas só confirma/corrige; rotina de 1 minuto no follow-up (tag, valor, mensagem agendada, nota); conversão por categoria.
+- **Relatório do Douglas:** nesta 1ª etapa vai para o Fernando (seção/PDF próprio) até a estrutura estabilizar; depois, direto para o Douglas.
+- **SIGCLOUD:** o que só o SIGCLOUD confirma vai como lista para o Fernando conferir (venda ganha sem baixa, cliente que pode ter comprado na loja, grama × estoque, pedidos em aberto).
+- **Documentos de 18/11** em comunicacoes/2026-11-18_*.md (mapa, Douglas, checklist → Jhonatan revisa antes do Fernando; mensagem ao Thiago → Jhonatan envia).
+
 ## 5-0. NOVA ORDEM DO RELATÓRIO (Jhonatan, 10/11/2026) — vale a partir da edição nº 16
 
 **Regra:** primeiro **tudo o que o Fernando pediu** (Parte 1), depois **as leituras da Portilho** (Parte 2). Por ora só se acrescenta; o corte de páginas será decidido numa reunião do Jhonatan com o Fernando (hoje são 3–4 páginas, o que é demais). Os números saem de `dados_edicao.py` (chaves abaixo).

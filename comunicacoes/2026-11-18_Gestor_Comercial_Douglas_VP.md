@@ -1,7 +1,7 @@
-# Gestor comercial — papel do Douglas e relatório do Douglas
+# Coordenador comercial — papel do Douglas e relatório do Douglas
 ### Versão 1 · a partir da reunião de 18/11/2026 · proposta para o Jhonatan revisar
 
-**Situação hoje (dito pelo Fernando):** o Fernando assumiu como gestor comercial para treinar o processo; o Douglas já faz o **acompanhamento** dos vendedores. Quem fica formalmente como gestor e quando o Douglas assume tudo: **a confirmar**.
+**Papéis (definido pelo Jhonatan em 18/11):** o **Fernando é o gestor comercial** — acompanha os relatórios do Douglas e certifica que o trabalho está sendo feito. O **Douglas é o coordenador comercial** — acompanha a execução dos vendedores.
 
 **Objetivo:** delegar responsabilidade ao Douglas com o processo claro — o Fernando cobra o Douglas por indicadores, e não por leitura de relatório inteiro.
 
@@ -68,4 +68,4 @@ Para as vendas ganhas do dia: dias entre o início da conversa daquela venda e a
 | **Douglas** | Relatório do Douglas (4.1 a 4.3) | Cobrar a execução, revisar "onde travou", recolher retornos |
 | **Fernando** | Relatório diário (números do dia, taxas por vendedor, indicadores do Douglas) + os itens que dependem do SIGCLOUD | Decidir e cobrar o Douglas |
 
-Aberto: o relatório do Douglas vai por WhatsApp para o Douglas diretamente, ou para o Fernando repassar — **a confirmar** (hoje só o envio ao Fernando está autorizado).
+**Envio:** nesta primeira etapa, o relatório do Douglas vai **para o Fernando**, até a estrutura ficar estável. Depois passa a ir direto para o Douglas.
