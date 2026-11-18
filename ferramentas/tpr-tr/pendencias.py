@@ -74,7 +74,7 @@ def main(d, dia, anterior=None):
 
     for o in A:
         mov = ts(o["moved"]) if o["moved"] else None
-        if o["step"] in (44341, 69421) and o["status"] not in (None, "OPEN"):
+        if o["step"] in (44341, 132981, 69421) and o["status"] not in (None, "OPEN"):
             add("venda_reaberta", o, "ganho" if o["status"] == "WON" else "encerrado")
         elif o["status"] == "WON" and o["step"] in (36613, 121919, 44334) and mov and mov >= DESDE_ACOES:
             add("venda_fora", o)
@@ -85,9 +85,9 @@ def main(d, dia, anterior=None):
             add("encerrar_conversa", o)
         if o["step"] in (36971, 113074) and o["contactId"] not in agendado:
             add("fu2_sem_agenda" if o["step"] == 113074 else "fu1_sem_agenda", o, f"na coluna há {(corte - mov).days} dia(s)" if mov else "")
-        if o["step"] == 44341 and o["status"] in (None, "OPEN") and mov and dias_uteis(mov, corte) > 1:
+        if o["step"] in (44341, 132981) and o["status"] in (None, "OPEN") and mov and dias_uteis(mov, corte) > 1:
             add("parado_inicial", o, ("aviso da Maria? " if o["userId"] == 28637 else "") + f"{dias_uteis(mov, corte)} dias úteis")
-        if (o["step"] not in (44341,) and o["id"] in tags and ts(o["createdAt"]) >= DESDE_TAG
+        if (o["step"] not in (44341, 132981) and o["id"] in tags and ts(o["createdAt"]) >= DESDE_TAG
                 and not any(t in TAG_TIPO for t in tags[o["id"]])):
             add("sem_tag", o)
 

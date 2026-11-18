@@ -18,10 +18,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tpr_tr  # noqa: E402
 
 BRT = timezone(timedelta(hours=-3))
-S = {44341: "Atendimento Inicial", 69421: "Atendimento de Vendedores", 36971: "Follow-up 1", 113074: "Follow-up 2",
+S = {44341: "Atendimento Inicial", 132981: "Atendimento Inicial (Meta)", 69421: "Atendimento de Vendedores", 36971: "Follow-up 1", 113074: "Follow-up 2",
      32318: "Venda Efetivada", 36613: "Venda Perdida", 121919: "Não Comercial", 44334: "Incógnita"}
 ENCERRA = (32318, 36613, 121919, 44334)
-ATIVAS = (44341, 69421, 36971, 113074)
+ATIVAS = (44341, 132981, 69421, 36971, 113074)
 U = tpr_tr.USUARIOS
 TAG_TIPO = {"BUQUES", "GRAMA", "FLOR DE PRESENTE", "FLOR DE CORTE", "PLANTAS ORMAMENTAIS", "PLANTAS ORNAMENTAIS",
             "FRUTÍFERAS", "ARVORES DE SOMBRA", "PALMEIRA", "CEDROS", "EUCALIPTO", "TREPADEIRA", "FORRAÇÃO", "PEDRA",
@@ -29,7 +29,7 @@ TAG_TIPO = {"BUQUES", "GRAMA", "FLOR DE PRESENTE", "FLOR DE CORTE", "PLANTAS ORM
 VENDA = re.compile(r"j[aá] fez o pedido|fez o pedido|comprou|vem buscar|vai vir|vai passar|passar na loja|entregamos|"
                    r"veio na loja|veio at[eé] a loja|pagou", re.I)
 PERDA = re.compile(r"achou caro|\bcaro\b|frete|outra cidade|desistiu|n[aã]o vai querer|mais barato|n[aã]o temos|n[aã]o tinha", re.I)
-VENDEDORES = ("Carine", "Douglas", "Edimar")  # rodízio 40/40/20 (Carine/Douglas/Edimar) desde 27/10
+VENDEDORES = ("Jaqueline", "Carine", "Edimar")  # rodízio 40/40/20 definido pelo Fernando no grupo do CRM em 12/11; Douglas = gestor comercial
 SEM_INFO = re.compile(r"retorno|respond|reponde|reativ|parou|perdido|sumiu|frio|curios|s[oó] cot|n[aã]o efetiv", re.I)
 CAT_PERDA = (("não temos o produto ou a pronta entrega", re.compile(r"pronta|n[aã]o tem|n[aã]o tinha|tinhamos|sem estoque|n[aã]o trabalhamos", re.I)),
              ("logística (cidade, buscar, entrega, frete)", re.compile(r"frete|outra cidade|enviasse|enviar para|buscar|\bsc\b|entrega", re.I)),
@@ -153,7 +153,7 @@ def main(d, dia, anterior=None):
                        "com_data": [{"autor": nome(n["userId"]), "texto": n["body"][:120]} for n in nd if DATA.search(n["body"] or "")]}
 
     # 5. coluna atendimento
-    at = [o for o in A if o["step"] in (44341, 69421)]
+    at = [o for o in A if o["step"] in (44341, 132981, 69421)]
     out["s5_coluna"] = {"por_coluna": [(S[s], sum(1 for o in A if o["step"] == s)) for s in ATIVAS],
                         "atendimento": len(at), "dormiram": sum(1 for o in at if o["moved"] and ts(o["moved"]) < d0)}
 

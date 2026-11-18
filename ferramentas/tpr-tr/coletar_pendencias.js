@@ -6,7 +6,7 @@ const { personify, unpersonify } = require('./pers');
 const { installApi } = require('./common_api');
 const fs = require('fs');
 const OUT = process.argv[2];
-const ENCERRA = [32318, 36613, 121919, 44334], ATIVAS = [44341, 69421, 36971, 113074];
+const ENCERRA = [32318, 36613, 121919, 44334], ATIVAS = [44341, 132981, 69421, 36971, 113074];
 (async () => {
   const t0 = Date.now(); let calls = 0;
   const neg = JSON.parse(fs.readFileSync(OUT + '/negocios.json'));

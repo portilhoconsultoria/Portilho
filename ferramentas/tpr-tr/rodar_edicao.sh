@@ -18,6 +18,8 @@ test -f "$OUT/meta.json"
 NODE_PATH=$(npm root -g) node coletar_edicao.js "$DIA" "$OUT" "$FONES" | grep -E '^\{|ERRO' || true
 test -f "$OUT/meta_edicao.json"
 python3 -I dados_edicao.py "$OUT" "$DIA" ${ANT:+"$ANT"} > "$OUT/dados.json"
+# leitura das conversas dos cards movidos no dia (reunião de 18/11): ciclo da venda, processo da venda ganha, onde travou, rotina do follow-up
+python3 -I conversas.py "$OUT" "$DIA" > "$OUT/conversas.json" || echo "ERRO conversas.py"
 # pendências (PDF à parte, desde 30/10): conversas abertas + contatos, e a lista acumulada
 NODE_PATH=$(npm root -g) node coletar_pendencias.js "$OUT" | grep -E '^\{|ERRO' || true
 test -f "$OUT/meta_pendencias.json"

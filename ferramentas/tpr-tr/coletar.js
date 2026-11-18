@@ -4,7 +4,8 @@ const { open, S } = require('./common');
 const { personify, unpersonify } = require('./pers');
 const { installApi } = require('./common_api');
 const fs = require('fs');
-const STEPS = [44341, 69421, 36971, 113074, 32318, 36613, 121919, 44334];
+const STEPS = [44341, 132981, 69421, 36971, 113074, 32318, 36613, 121919, 44334]; // 132981: coluna nova de Atendimento Inicial (Meta), vista em 18/11
+const FECHA = new Set([32318, 36613, 44334]); // cards encerrados: conversa inteira (ciclo da venda e onde travou, reunião de 18/11)
 const DESDE = new Date(process.argv[2]);
 const CTX = new Date(DESDE.getTime() - 24 * 3600e3); // 24h antes, para saber se o atendimento já estava aberto
 const OUT = process.argv[3];
@@ -24,14 +25,15 @@ const OUT = process.argv[3];
     console.log('coluna', step, 'cards acumulados', cards.length);
   }
   const tickets = [...new Set(cards.flatMap(c => c.ticketIds || []))];
+  const inteiro = new Set(cards.filter(c => FECHA.has(c.step)).flatMap(c => c.ticketIds || []));
   const msgs = {};
   for (const [i, t] of tickets.entries()) {
     const all = [];
     for (let pg = 1; pg < 200; pg++) {
       const d = await get(`/messages/${t}?pageNumber=${pg}`);
       const ms = d.messages || [];
-      all.push(...ms.map(m => ({ id: m.id, at: m.createdAt, fromMe: m.fromMe, userId: m.userId, sys: m.sendBySystem, ai: m.generatedByAi, colAuto: m.columnAutomationId, flow: m.automationFlowExecutionId, type: m.mediaType, deleted: m.isDeleted, body: (m.body || '').slice(0, 40) })));
-      if (!d.hasMore || !ms.length || ms.reduce((a, m) => Math.min(a, new Date(m.createdAt)), Infinity) < CTX) break;
+      all.push(...ms.map(m => ({ id: m.id, at: m.createdAt, fromMe: m.fromMe, userId: m.userId, sys: m.sendBySystem, ai: m.generatedByAi, colAuto: m.columnAutomationId, flow: m.automationFlowExecutionId, type: m.mediaType, deleted: m.isDeleted, body: (m.body || '').slice(0, 400) })));
+      if (!d.hasMore || !ms.length || (!inteiro.has(t) && ms.reduce((a, m) => Math.min(a, new Date(m.createdAt)), Infinity) < CTX) || (inteiro.has(t) && pg >= 25)) break;
     }
     msgs[t] = all;
     if (i % 50 === 0) console.log('tickets', i + 1, '/', tickets.length);
