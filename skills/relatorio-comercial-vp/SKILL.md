@@ -131,6 +131,8 @@ Expediente: **segunda a sexta, 08:00–18:00**. Sábado não publicado — fica 
 - **Grupo "CRM - Verdes Plantas"** (ticket 9214242 no DKW da Portilho): ler antes de redigir; decisões e mudanças de configuração entram na seção de configuração.
 - **Processo é a base, o relatório mede o processo** (mapa em comunicacoes/2026-11-18_Mapa_Processo_Comercial_VP.md).
 - **Leitura das conversas (conversas.py → conversas.json):** ciclo da venda (início da conversa daquela venda → Venda ganha) por categoria; venda ganha com PDF do pedido, Pix e comprovante; **onde travou** (Incógnita/Venda Perdida do dia) — a classificação automática é 1ª passagem: eu leio os trechos e corrijo antes de publicar; o Douglas só confirma/corrige; rotina de 1 minuto no follow-up (tag, valor, mensagem agendada, nota); conversão por categoria.
+- **Avaliar uma interação = conversa do WhatsApp + notas do card.** Nunca julgar um card só pela conversa (ligações e repasses ficam nas notas). Proposta ao Fernando (pergunta no relatório e no checklist): toda ligação vira nota no card; ligação sem nota conta como etapa não feita.
+- **Cortes do relatório:** só depois que o Fernando responder o checklist. Até lá, só acrescentar.
 - **Relatório do Douglas:** nesta 1ª etapa vai para o Fernando (seção/PDF próprio) até a estrutura estabilizar; depois, direto para o Douglas.
 - **SIGCLOUD:** o que só o SIGCLOUD confirma vai como lista para o Fernando conferir (venda ganha sem baixa, cliente que pode ter comprado na loja, grama × estoque, pedidos em aberto).
 - **Documentos de 18/11** em comunicacoes/2026-11-18_*.md (mapa, Douglas, checklist → Jhonatan revisa antes do Fernando; mensagem ao Thiago → Jhonatan envia).

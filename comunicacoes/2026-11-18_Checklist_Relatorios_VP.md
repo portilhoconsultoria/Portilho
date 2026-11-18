@@ -59,7 +59,19 @@
 | ☐ | Grama vendida × estoque | Faturamento com estoque negativo e adiantamentos |
 | ☐ | Pedidos em aberto no SIG | Pedido gerado e não pago |
 
-## 6. Cortes propostos no relatório atual (a confirmar)
+## 6. Pergunta para o Fernando — ligações
+
+Os vendedores às vezes ligam para o cliente, e hoje a ligação não deixa registro. **Proposta: toda ligação vira nota no card** — data, o que foi falado, próximo passo.
+
+**Argumento para a equipe:** a avaliação de cada atendimento (relatório do Douglas e do Fernando) lê **a conversa do WhatsApp e as notas do card**. Uma negociação que avançou por telefone sem nota fica com um buraco — parece que nada foi feito — e o vendedor vai ter que dar a explicação depois, quando for perguntado. Anotar na hora leva um minuto e evita essa conversa.
+
+| ☐ | Decisão |
+|---|---|
+| ☐ | Sim: ligação sem nota conta como etapa não feita |
+| ☐ | Sim, mas só nas negociações de valor alto / grama |
+| ☐ | Não por enquanto |
+
+## 7. Cortes propostos no relatório atual (a confirmar — só depois da resposta do Fernando)
 
 | ☐ | Seção | Proposta |
 |---|---|---|

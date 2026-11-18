@@ -47,6 +47,8 @@ Ao terminar a conversa sem fechamento, **na mesma hora**, o vendedor:
 
 Regra: **a mensagem sempre termina em pergunta.**
 
+**Ligação também vira nota (proposta de 18/11, a confirmar com o Fernando).** Quando o vendedor liga para o cliente, registra na hora uma nota no card: *data, o que foi falado e próximo passo* (ex.: "18/11 — liguei, confirmou 70 m², retira sexta; agendei mensagem para quinta"). Motivo: **toda avaliação do atendimento lê a conversa do WhatsApp e as notas do card**. Ligação sem nota aparece como um buraco no atendimento — o vendedor vai ter que explicar depois, quando for perguntado. Anotar na hora leva um minuto e evita a explicação.
+
 ## Etapa 3B — Regra de destino de quem não responde (como o Fernando descreveu)
 
 | Situação | Destino |
@@ -85,7 +87,7 @@ Regra: **a mensagem sempre termina em pergunta.**
 1. **Expedição** — hoje a Maria faz caixa e expedição; o vendedor sai da mesa para buscar produto e mandar foto. Ideia: produto pré-separado ao confirmar a venda. Fica para outra reunião.
 2. **Pós-venda** — não existe ação hoje.
 3. **Cliente que para de responder** — proposta de coluna **"Sem resposta"** com follow-up automático (início e meio do dia) e saída só pelo Douglas, **ou** analisar as conversas que caem em Incógnita/Venda Perdida e classificar onde travou. **Decisão: testar primeiro a análise das conversas** com o que já existe.
-4. **Ligações** — os vendedores às vezes ligam; não fica registro. Proposta: o vendedor anota no card que ligou *(a confirmar)*.
+4. **Ligações** — os vendedores às vezes ligam e hoje não fica registro. Proposta: **toda ligação vira nota no card** (ver Etapa 3A). Pergunta enviada ao Fernando no relatório de 18/11.
 5. **Nome salvo pela IA** — hoje os contatos não são salvos com nome; nunca foi definido.
 6. **Atendimento Inicial Meta × WhatsApp** — o Thiago criou duas colunas de entrada; deve ser **uma só**.
 7. **Mensagens prontas** — cadastrar o Pix, o pedido de comprovante e o envio do PDF do pedido para não digitar toda vez.

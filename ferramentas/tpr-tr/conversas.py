@@ -27,6 +27,7 @@ IMG_T = {"image", "imageMessage", "application/pdf", "application"}
 PIX = re.compile(r"\bpix\b|chave|cnpj|copia e cola|qr ?code", re.I)
 PEDIDO = re.compile(r"pedido|or[cç]amento", re.I)
 COMPROV = re.compile(r"comprovante|paguei|pago|transferi|fiz o pix|segue o pix", re.I)
+LIGOU = re.compile(r"liguei|liga[cç][aã]o|ligou|ligar|telefon|por fone", re.I)
 LOJA = re.compile(r"vou (a[ií]|passar|buscar)|passo a[ií]|na loja|vou retirar|retiro|pago a[ií]|pagar a[ií]", re.I)
 ETAPAS = (
     ("produto em falta", re.compile(r"n[aã]o temos|em falta|sem estoque|n[aã]o trabalhamos|acabou", re.I)),
@@ -87,10 +88,16 @@ def main(d, dia):
         ms = sorted((m for t in c.get("ticketIds") or [] for m in M.get(str(t), [])), key=lambda m: m["at"])
         return c, humanas(ms)
 
+    def notas(o):
+        v = sorted(NT.get(str(o["id"])) or [], key=lambda n: n["createdAt"])
+        return [{"em": ts(n["createdAt"]).strftime("%d/%m %H:%M"), "autor": nome(n.get("userId")),
+                 "texto": (n.get("body") or "").replace("\n", " ").strip()[:240]} for n in v[-3:]]
+
     def base(o, c):
         cc = C.get(str(o["contactId"])) or {}
         return {"card": o["id"], "vendedor": nome(o["userId"]), "cliente": cc.get("name") or c.get("contact") or "(sem nome)",
-                "telefone": cc.get("number") or c.get("number") or "", "categoria": categoria(c), "valor": o["amount"]}
+                "telefone": cc.get("number") or c.get("number") or "", "categoria": categoria(c), "valor": o["amount"],
+                "notas": notas(o), "ligacao_anotada": any(LIGOU.search(n["texto"]) for n in notas(o))}
 
     out = {"dia": dia, "definicao": __doc__.strip().splitlines()[0]}
 
@@ -153,7 +160,10 @@ def main(d, dia):
         cli = [m for m in hs if not m["fromMe"]]
         ult_eu, ult_cli = (eu[-1] if eu else None), (cli[-1] if cli else None)
         ultimo = hs[-1] if hs else None
-        if len(cli) <= 1 and not eu:
+        nts = notas(o)
+        if len(cli) <= 1 and not eu and nts:
+            etapa = "sem conversa no WhatsApp, só nota (ler a nota)"
+        elif len(cli) <= 1 and not eu:
             etapa = "sem interação (ninguém respondeu)"
         elif len(cli) <= 1:
             etapa = "sem interação do cliente depois do 1º contato"
