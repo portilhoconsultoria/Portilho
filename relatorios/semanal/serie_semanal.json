@@ -115,5 +115,47 @@
   "coorte_vendas": 17,
   "coorte_aberto": 86,
   "nota": "sábado lido até 12h27; FU1/FU2 separados desde 10/11"
+ },
+ "2026-11-16": {
+  "n": 5,
+  "atendimentos_novos": 203,
+  "encerramentos": 215,
+  "por_acoes": 214,
+  "incognita": 75,
+  "vendas_ok": 39,
+  "valor_vendas": 11168.85,
+  "perdas": 79,
+  "perdas_com_motivo": 78,
+  "perdas_sem_valor": 3,
+  "perdas_sem_retorno": 52,
+  "tpr_mediana_min": 77.9,
+  "tpr_p90_min": 281.0,
+  "tpr_sem_resposta": 63,
+  "tpr_sem_resposta_fora_rodizio": 28,
+  "tr_mediana_min": 4.2,
+  "agendamentos_criados": 39,
+  "agendamentos_enviados": 40,
+  "fu2_com_agenda_quinta": [
+   7,
+   21
+  ],
+  "fu1_com_agenda_quinta": [
+   3,
+   21
+  ],
+  "notas": 134,
+  "notas_com_data": 33,
+  "tags_iniciados": 199,
+  "tags_com_tipo": 85,
+  "carteira_ativa_fim": 197,
+  "entrada_rodizio": {
+   "Jaqueline": 73,
+   "Carine": 62,
+   "Edimar": 49,
+   "fora": 19
+  },
+  "coorte_vendas": 21,
+  "coorte_aberto": 79,
+  "nota": "lida em 24/11 08h54 (semanal atrasada); 20/11 feriado sem atendimento, fora do relógio do TPR (sem a correção, mediana 93 min); carteira fim = diário de 19/11; coorte lida 3 dias após a semana; sábado inteiro; perdas_sem_retorno revisadas à mão"
  }
 }

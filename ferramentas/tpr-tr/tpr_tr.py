@@ -1,7 +1,7 @@
 """TPR/TR da Verdes Plantas a partir de cards.json + mensagens.json (coletar.js).
 
 Definições: wiki/entities/kpis-atendimento-comercial-verdes-plantas.md
-- Expediente seg–sex 08:00–18:00 (America/Sao_Paulo). Sábado e domingo fora.
+- Expediente seg–sex 08:00–18:00 (America/Sao_Paulo). Sábado, domingo e FERIADOS (loja fechada) fora.
 - Fora do expediente, o relógio começa na abertura do dia útil seguinte.
 - Só mensagem de vendedor humano para o relógio (automação não conta).
 - Reporte em minutos, mediana e P90.
@@ -38,8 +38,13 @@ def ts(s):
     return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(BRT)
 
 
+# Feriados em que a loja não atendeu (medido: nenhuma mensagem de vendedor no dia). O relógio não corre neles.
+# 20/11/2026 (Consciência Negra): 65 mensagens de clientes, 0 de vendedor — medido em 24/11/2026.
+FERIADOS = {"2026-11-20"}
+
+
 def util(d):
-    return d.weekday() < 5
+    return d.weekday() < 5 and d.date().isoformat() not in FERIADOS
 
 
 def segundos_expediente(a, b):
