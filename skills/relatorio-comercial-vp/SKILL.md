@@ -124,6 +124,16 @@ Expediente: **segunda a sexta, 08:00–18:00**. Sábado não publicado — fica 
 
 ---
 
+## 5-000. DECISÕES DE 24/11/2026 (Jhonatan, sessão nova)
+
+- **Retorno dos vendedores** = nota no card começando com "Retorno:" — o relatório lê e soma.
+- **Complementar, não substituir:** construímos aqui o motor que achamos melhor; o que o Fernando faz no ChatGPT dele continua e é complementado. **Destino provável do motor: virar skill no GPT da própria empresa** (hoje roda no Claude, com tokens do Jhonatan). Por isso: indicadores especificados num catálogo neutro, cálculo em scripts Python sem dependência do Claude, acesso por usuário-robô da Verdes. ERP (SIGCLOUD) não está conectado aqui.
+- **Relatório do Douglas: só começa a ser emitido depois de o Jhonatan revisar e aprovar.**
+- **Duas camadas (decisão da presidência, confidencial — não citar a origem a ninguém):** relatório de **coordenação** (Douglas; caso individual — é o diário + pendências de hoje, muda só o destinatário) e relatório de **gerência** (Fernando; rotina da coordenação e tendência, **sem nome, telefone nem quebra por vendedor**). Desenho em `comunicacoes/2026-11-24_Desenho_Relatorio_Gerencia_VP.md`, aguardando aprovação. **A comunicação ao Fernando é da presidência: até ela acontecer, o diário segue para o Fernando como está** e não se acrescentam ao diário novas listas por vendedor.
+- **"39% das vendas efetivadas sem valor"** é a base inteira com histórico: medido 32% (411/1.285) na base, **1% desde 20/10**. Não usar 39% como atual.
+- **Feriado sem atendimento** (nenhuma mensagem de vendedor) entra em `FERIADOS` no `tpr_tr.py` — o relógio do TPR não corre (20/11/2026).
+- Responsáveis e travas do CRM: rascunho em `comunicacoes/2026-11-24_Responsaveis_e_Travas_CRM_VP.md`. Thiago: o Jhonatan está tratando direto; a mensagem de 18/11 fica parada até ele pedir.
+
 ## 5-00. DECISÕES DE 18/11/2026 (reunião Jhonatan × Fernando + respostas do Jhonatan) — valem a partir da edição nº 22
 
 - **Papéis:** Fernando = gestor comercial (acompanha os relatórios do Douglas e certifica que o trabalho é feito). Douglas = **coordenador** comercial (acompanha a execução dos vendedores). Não chamar o Douglas de "gestor".
