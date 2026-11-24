@@ -1,0 +1,1508 @@
+{
+ "dia": "2026-11-23",
+ "coleta": "24/11/2026 09:20",
+ "volume": {
+  "negocios": 7491,
+  "agendamentos": 265,
+  "notas_lidas": 70
+ },
+ "s1_movimento": {
+  "total": 153,
+  "por_destino": [
+   [
+    "Atendimento de Vendedores",
+    41
+   ],
+   [
+    "Venda Perdida",
+    38
+   ],
+   [
+    "Incógnita",
+    20
+   ],
+   [
+    "Venda Efetivada",
+    15
+   ],
+   [
+    "Atendimento Inicial",
+    11
+   ],
+   [
+    "Follow-up 1",
+    10
+   ],
+   [
+    "Atendimento Inicial (Meta)",
+    6
+   ],
+   [
+    "Não Comercial",
+    6
+   ],
+   [
+    "Follow-up 2",
+    6
+   ]
+  ],
+  "anterior_total": 104
+ },
+ "s2_encerramentos": {
+  "encerramentos": 79,
+  "por_acoes": 78,
+  "arrastados": 1,
+  "vendas": 15,
+  "vendas_problema": [],
+  "perdas": 38,
+  "perdas_sem_motivo": [],
+  "incognita_com_sinal": [
+   {
+    "vendedor": "Carine",
+    "cliente": "João Gabriel Bacil",
+    "telefone": "5542998560055",
+    "valor": "100.00",
+    "status": "WON",
+    "nota": "esta  porque parou de responder  e reativei a mensagem",
+    "sinal": "ganho marcado"
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Manoela",
+    "telefone": "5542998131831",
+    "valor": null,
+    "status": "CANCELLED",
+    "nota": "queria saber se a loja estava aberta , veio ate a loja",
+    "sinal": "venda"
+   }
+  ],
+  "acumulado": {
+   "perdida_sem_motivo": 1049,
+   "efetivada_sem_valor": 411,
+   "ganho_status_won_fora_da_efetivada": 92
+  },
+  "serie_acumulado": {
+   "18/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "20/10": {
+    "perdida_sem_motivo": 1093,
+    "efetivada_sem_valor": 448
+   },
+   "21/10": {
+    "perdida_sem_motivo": 1095,
+    "efetivada_sem_valor": 445,
+    "ganho_status_won_fora_da_efetivada": 124
+   },
+   "22/10": {
+    "perdida_sem_motivo": 1090,
+    "efetivada_sem_valor": 444,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "23/10": {
+    "perdida_sem_motivo": 1086,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "26/10": {
+    "perdida_sem_motivo": 1083,
+    "efetivada_sem_valor": 443,
+    "ganho_status_won_fora_da_efetivada": 130
+   },
+   "27/10": {
+    "perdida_sem_motivo": 1084,
+    "efetivada_sem_valor": 440,
+    "ganho_status_won_fora_da_efetivada": 131
+   },
+   "28/10": {
+    "perdida_sem_motivo": 1085,
+    "efetivada_sem_valor": 438,
+    "ganho_status_won_fora_da_efetivada": 130
+   },
+   "29/10": {
+    "perdida_sem_motivo": 1082,
+    "efetivada_sem_valor": 436,
+    "ganho_status_won_fora_da_efetivada": 136
+   },
+   "30/10": {
+    "perdida_sem_motivo": 1081,
+    "efetivada_sem_valor": 435,
+    "ganho_status_won_fora_da_efetivada": 134
+   },
+   "02/11": {
+    "perdida_sem_motivo": 1078,
+    "efetivada_sem_valor": 434,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "03/11": {
+    "perdida_sem_motivo": 1076,
+    "efetivada_sem_valor": 432,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "04/11": {
+    "perdida_sem_motivo": 1074,
+    "efetivada_sem_valor": 431,
+    "ganho_status_won_fora_da_efetivada": 128
+   },
+   "05/11": {
+    "perdida_sem_motivo": 1074,
+    "efetivada_sem_valor": 429,
+    "ganho_status_won_fora_da_efetivada": 129
+   },
+   "06/11": {
+    "perdida_sem_motivo": 1071,
+    "efetivada_sem_valor": 427,
+    "ganho_status_won_fora_da_efetivada": 129
+   },
+   "09/11": {
+    "perdida_sem_motivo": 1069,
+    "efetivada_sem_valor": 426,
+    "ganho_status_won_fora_da_efetivada": 133
+   },
+   "10/11": {
+    "perdida_sem_motivo": 1065,
+    "efetivada_sem_valor": 422,
+    "ganho_status_won_fora_da_efetivada": 123
+   },
+   "11/11": {
+    "perdida_sem_motivo": 1062,
+    "efetivada_sem_valor": 421,
+    "ganho_status_won_fora_da_efetivada": 115
+   },
+   "12/11": {
+    "perdida_sem_motivo": 1061,
+    "efetivada_sem_valor": 418,
+    "ganho_status_won_fora_da_efetivada": 111
+   },
+   "13/11": {
+    "perdida_sem_motivo": 1059,
+    "efetivada_sem_valor": 416,
+    "ganho_status_won_fora_da_efetivada": 111
+   },
+   "16/11": {
+    "perdida_sem_motivo": 1059,
+    "efetivada_sem_valor": 415,
+    "ganho_status_won_fora_da_efetivada": 100
+   },
+   "17/11": {
+    "perdida_sem_motivo": 1056,
+    "efetivada_sem_valor": 415,
+    "ganho_status_won_fora_da_efetivada": 95
+   },
+   "18/11": {
+    "perdida_sem_motivo": 1053,
+    "efetivada_sem_valor": 414,
+    "ganho_status_won_fora_da_efetivada": 95
+   },
+   "19/11": {
+    "perdida_sem_motivo": 1052,
+    "efetivada_sem_valor": 414,
+    "ganho_status_won_fora_da_efetivada": 95
+   },
+   "23/11": {
+    "perdida_sem_motivo": 1049,
+    "efetivada_sem_valor": 411,
+    "ganho_status_won_fora_da_efetivada": 92
+   }
+  }
+ },
+ "s3_followup": {
+  "cards_fu": 56,
+  "com_agendamento": 11,
+  "sem": 45,
+  "pendentes_base": 15,
+  "historico_base": 265,
+  "serie": {
+   "20/10": {
+    "fu": 71,
+    "com_agendamento": 2
+   },
+   "21/10": {
+    "fu": 80,
+    "com_agendamento": 6
+   },
+   "22/10": {
+    "fu": 81,
+    "com_agendamento": 4
+   },
+   "23/10": {
+    "fu": 87,
+    "com_agendamento": 6
+   },
+   "26/10": {
+    "fu": 106,
+    "com_agendamento": 10
+   },
+   "27/10": {
+    "fu": 109,
+    "com_agendamento": 12
+   },
+   "28/10": {
+    "fu": 125,
+    "com_agendamento": 10
+   },
+   "29/10": {
+    "fu": 128,
+    "com_agendamento": 15
+   },
+   "30/10": {
+    "fu": 155,
+    "com_agendamento": 14
+   },
+   "02/11": {
+    "fu": 150,
+    "com_agendamento": 25
+   },
+   "03/11": {
+    "fu": 132,
+    "com_agendamento": 14
+   },
+   "04/11": {
+    "fu": 77,
+    "com_agendamento": 12
+   },
+   "05/11": {
+    "fu": 73,
+    "com_agendamento": 9
+   },
+   "06/11": {
+    "fu": 70,
+    "com_agendamento": 7
+   },
+   "09/11": {
+    "fu": 72,
+    "com_agendamento": 4
+   },
+   "10/11": {
+    "fu": 83,
+    "com_agendamento": 4
+   },
+   "11/11": {
+    "fu": 70,
+    "com_agendamento": 11
+   },
+   "12/11": {
+    "fu": 54,
+    "com_agendamento": 19
+   },
+   "13/11": {
+    "fu": 44,
+    "com_agendamento": 22
+   },
+   "16/11": {
+    "fu": 45,
+    "com_agendamento": 20
+   },
+   "17/11": {
+    "fu": 51,
+    "com_agendamento": 16
+   },
+   "18/11": {
+    "fu": 42,
+    "com_agendamento": 14
+   },
+   "19/11": {
+    "fu": 42,
+    "com_agendamento": 10
+   },
+   "23/11": {
+    "fu": 56,
+    "com_agendamento": 11
+   }
+  },
+  "fu2": {
+   "cards": 22,
+   "com_agendamento": 10,
+   "com_nota": 5,
+   "por_vendedor": {
+    "Jaqueline": {
+     "cards": 5,
+     "com_agendamento": 1
+    },
+    "Edimar": {
+     "cards": 12,
+     "com_agendamento": 6
+    },
+    "Carine": {
+     "cards": 3,
+     "com_agendamento": 3
+    },
+    "Fernando": {
+     "cards": 2,
+     "com_agendamento": 0
+    }
+   }
+  },
+  "fu1": {
+   "cards": 34,
+   "com_agendamento": 1,
+   "com_nota": 6,
+   "por_vendedor": {
+    "Jaqueline": {
+     "cards": 10,
+     "com_agendamento": 1
+    },
+    "Carine": {
+     "cards": 5,
+     "com_agendamento": 0
+    },
+    "Edimar": {
+     "cards": 15,
+     "com_agendamento": 0
+    },
+    "Douglas": {
+     "cards": 3,
+     "com_agendamento": 0
+    },
+    "Fernando": {
+     "cards": 1,
+     "com_agendamento": 0
+    }
+   }
+  },
+  "serie_separada": {
+   "10/11": {
+    "fu2": {
+     "cards": 38,
+     "com_agendamento": 4
+    },
+    "fu1": {
+     "cards": 45,
+     "com_agendamento": 0
+    }
+   },
+   "11/11": {
+    "fu2": {
+     "cards": 38,
+     "com_agendamento": 11
+    },
+    "fu1": {
+     "cards": 32,
+     "com_agendamento": 0
+    }
+   },
+   "12/11": {
+    "fu2": {
+     "cards": 35,
+     "com_agendamento": 15
+    },
+    "fu1": {
+     "cards": 19,
+     "com_agendamento": 4
+    }
+   },
+   "13/11": {
+    "fu2": {
+     "cards": 34,
+     "com_agendamento": 19
+    },
+    "fu1": {
+     "cards": 10,
+     "com_agendamento": 3
+    }
+   },
+   "16/11": {
+    "fu2": {
+     "cards": 30,
+     "com_agendamento": 18
+    },
+    "fu1": {
+     "cards": 15,
+     "com_agendamento": 2
+    }
+   },
+   "17/11": {
+    "fu2": {
+     "cards": 24,
+     "com_agendamento": 16
+    },
+    "fu1": {
+     "cards": 27,
+     "com_agendamento": 0
+    }
+   },
+   "18/11": {
+    "fu2": {
+     "cards": 20,
+     "com_agendamento": 10
+    },
+    "fu1": {
+     "cards": 22,
+     "com_agendamento": 4
+    }
+   },
+   "19/11": {
+    "fu2": {
+     "cards": 21,
+     "com_agendamento": 7
+    },
+    "fu1": {
+     "cards": 21,
+     "com_agendamento": 3
+    }
+   },
+   "23/11": {
+    "fu2": {
+     "cards": 22,
+     "com_agendamento": 10
+    },
+    "fu1": {
+     "cards": 34,
+     "com_agendamento": 1
+    }
+   }
+  },
+  "nota_serie": "FU1+FU2 somados até 09/11 (referência); separados desde 10/11; meta (FU1 e FU2 com 100% de mensagem agendada) vale a partir do treinamento"
+ },
+ "s4_notas": {
+  "total": 37,
+  "por_autor": [
+   [
+    "Jaqueline",
+    12
+   ],
+   [
+    "Douglas",
+    11
+   ],
+   [
+    "Carine",
+    8
+   ],
+   [
+    "Edimar",
+    6
+   ]
+  ],
+  "com_data": [
+   {
+    "autor": "Jaqueline",
+    "texto": "segunda reativação  de mensagem!"
+   },
+   {
+    "autor": "Jaqueline",
+    "texto": "segunda reativação de mensagem!"
+   },
+   {
+    "autor": "Jaqueline",
+    "texto": "segunda reativação de mensagem"
+   }
+  ]
+ },
+ "s5_coluna": {
+  "por_coluna": [
+   [
+    "Atendimento Inicial",
+    19
+   ],
+   [
+    "Atendimento Inicial (Meta)",
+    6
+   ],
+   [
+    "Atendimento de Vendedores",
+    112
+   ],
+   [
+    "Follow-up 1",
+    34
+   ],
+   [
+    "Follow-up 2",
+    22
+   ]
+  ],
+  "atendimento": 137,
+  "dormiram": 71
+ },
+ "s6_tempo_resposta": {
+  "resumo": {
+   "TPR": {
+    "Carine": {
+     "respondidos": 12,
+     "mediana_min": 25.227408333333333,
+     "p90_min": 78.62521166666666,
+     "sem_resposta": 0,
+     "sem_resposta_mediana_aberto_min": null,
+     "aguardando_abertura": 0
+    },
+    "Douglas": {
+     "respondidos": 3,
+     "mediana_min": 4.911616666666666,
+     "p90_min": 6.873576666666667,
+     "sem_resposta": 6,
+     "sem_resposta_mediana_aberto_min": 261.394025,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 16,
+     "mediana_min": 55.24240833333334,
+     "p90_min": 97.05700833333333,
+     "sem_resposta": 0,
+     "sem_resposta_mediana_aberto_min": null,
+     "aguardando_abertura": 0
+    },
+    "Fernando": {
+     "respondidos": 6,
+     "mediana_min": 112.31465833333334,
+     "p90_min": 304.6187083333333,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 377.26673333333326,
+     "aguardando_abertura": 0
+    },
+    "Jaqueline": {
+     "respondidos": 8,
+     "mediana_min": 36.95963333333333,
+     "p90_min": 234.90503666666666,
+     "sem_resposta": 8,
+     "sem_resposta_mediana_aberto_min": 74.7101,
+     "aguardando_abertura": 0
+    },
+    "Luana": {
+     "respondidos": 1,
+     "mediana_min": 347.42735,
+     "p90_min": 347.42735,
+     "sem_resposta": 1,
+     "sem_resposta_mediana_aberto_min": 249.56795,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 46,
+     "mediana_min": 44.901241666666664,
+     "p90_min": 199.34208333333333,
+     "sem_resposta": 19,
+     "sem_resposta_mediana_aberto_min": 184.80468333333332,
+     "aguardando_abertura": 0
+    }
+   },
+   "TR": {
+    "Carine": {
+     "respondidos": 85,
+     "mediana_min": 4.577883333333333,
+     "p90_min": 29.613176666666686,
+     "sem_resposta": 2,
+     "sem_resposta_mediana_aberto_min": 233.59830833333334,
+     "aguardando_abertura": 0
+    },
+    "Douglas": {
+     "respondidos": 6,
+     "mediana_min": 5.957391666666666,
+     "p90_min": 74.21835833333333,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 141.93965833333334,
+     "aguardando_abertura": 0
+    },
+    "Edimar": {
+     "respondidos": 50,
+     "mediana_min": 7.760233333333334,
+     "p90_min": 62.873825000000004,
+     "sem_resposta": 4,
+     "sem_resposta_mediana_aberto_min": 132.73095833333332,
+     "aguardando_abertura": 0
+    },
+    "Fernando": {
+     "respondidos": 2,
+     "mediana_min": 20.747325000000004,
+     "p90_min": 37.29473166666667,
+     "sem_resposta": 5,
+     "sem_resposta_mediana_aberto_min": 157.14755,
+     "aguardando_abertura": 0
+    },
+    "Jaqueline": {
+     "respondidos": 87,
+     "mediana_min": 3.7843666666666667,
+     "p90_min": 41.4661566666667,
+     "sem_resposta": 8,
+     "sem_resposta_mediana_aberto_min": 120.67361666666666,
+     "aguardando_abertura": 0
+    },
+    "Luana": {
+     "respondidos": 1,
+     "mediana_min": 51.97293333333334,
+     "p90_min": 51.97293333333334,
+     "sem_resposta": 0,
+     "sem_resposta_mediana_aberto_min": null,
+     "aguardando_abertura": 0
+    },
+    "Equipe": {
+     "respondidos": 231,
+     "mediana_min": 4.67805,
+     "p90_min": 48.33206666666667,
+     "sem_resposta": 23,
+     "sem_resposta_mediana_aberto_min": 147.95648333333332,
+     "aguardando_abertura": 0
+    }
+   }
+  },
+  "fora_expediente": {
+   "TR": 2
+  },
+  "mensagens_lidas": 8859,
+  "meta_tpr_min": 4,
+  "proposta_tr_min": 15
+ },
+ "s6b_entrada": {
+  "rodizio": {
+   "Carine": {
+    "respondidos": 12,
+    "mesmo_dono": 10,
+    "outro_dono": 2,
+    "donos_diferentes": {
+     "Jaqueline": 2
+    },
+    "mediana_min": 25.227408333333333,
+    "p90_min": 78.62521166666666,
+    "sem_resposta_no_card_dele": 0
+   },
+   "Edimar": {
+    "respondidos": 16,
+    "mesmo_dono": 12,
+    "outro_dono": 4,
+    "donos_diferentes": {
+     "Douglas": 3,
+     "Fernando": 1
+    },
+    "mediana_min": 55.24240833333334,
+    "p90_min": 97.05700833333333,
+    "sem_resposta_no_card_dele": 0
+   },
+   "Jaqueline": {
+    "respondidos": 8,
+    "mesmo_dono": 7,
+    "outro_dono": 1,
+    "donos_diferentes": {
+     "Carine": 1
+    },
+    "mediana_min": 36.95963333333333,
+    "p90_min": 234.90503666666666,
+    "sem_resposta_no_card_dele": 8
+   }
+  },
+  "fora_do_rodizio": {
+   "Douglas": {
+    "respondidos": 3,
+    "mesmo_dono": 3,
+    "outro_dono": 0,
+    "donos_diferentes": {},
+    "mediana_min": 4.911616666666666,
+    "p90_min": 6.873576666666667,
+    "sem_resposta_no_card_dele": 6
+   },
+   "Fernando": {
+    "respondidos": 6,
+    "mesmo_dono": 6,
+    "outro_dono": 0,
+    "donos_diferentes": {},
+    "mediana_min": 112.31465833333334,
+    "p90_min": 304.6187083333333,
+    "sem_resposta_no_card_dele": 4
+   },
+   "Luana": {
+    "respondidos": 1,
+    "mesmo_dono": 0,
+    "outro_dono": 1,
+    "donos_diferentes": {
+     "Douglas": 1
+    },
+    "mediana_min": 347.42735,
+    "p90_min": 347.42735,
+    "sem_resposta_no_card_dele": 1
+   }
+  },
+  "definicao": "cliente novo (TPR) contado por quem deu a 1ª resposta; 'mesmo dono' = quem respondeu é o dono atual do card; sem resposta conta para o dono do card"
+ },
+ "s7_tags": {
+  "iniciados": 46,
+  "com_tag_tipo": 14,
+  "por_vendedor": {
+   "Jaqueline": {
+    "iniciados": 13,
+    "com_tag_tipo": 5,
+    "tags": [
+     [
+      "PLANTAS ORMAMENTAIS",
+      2
+     ],
+     [
+      "PEDRA",
+      1
+     ],
+     [
+      "ALEATORIO",
+      1
+     ],
+     [
+      "TERRA / SUBSTRATO",
+      1
+     ],
+     [
+      "FRUTÍFERAS",
+      1
+     ]
+    ]
+   },
+   "Douglas": {
+    "iniciados": 8,
+    "com_tag_tipo": 2,
+    "tags": [
+     [
+      "FRUTÍFERAS",
+      1
+     ],
+     [
+      "FORRAÇÃO",
+      1
+     ],
+     [
+      "VAI PASSAR NA LOJA",
+      1
+     ],
+     [
+      "VENENOS EM GERAL",
+      1
+     ]
+    ]
+   },
+   "Edimar": {
+    "iniciados": 6,
+    "com_tag_tipo": 1,
+    "tags": [
+     [
+      "EUCALIPTO",
+      1
+     ],
+     [
+      "GRAMA IRATI",
+      1
+     ]
+    ]
+   },
+   "Fernando": {
+    "iniciados": 9,
+    "com_tag_tipo": 0,
+    "tags": []
+   },
+   "Carine": {
+    "iniciados": 10,
+    "com_tag_tipo": 6,
+    "tags": [
+     [
+      "BUQUES",
+      5
+     ],
+     [
+      "CESTA DE CAFÉ",
+      1
+     ]
+    ]
+   }
+  },
+  "tags_mais_usadas": [
+   [
+    "BUQUES",
+    5
+   ],
+   [
+    "FRUTÍFERAS",
+    2
+   ],
+   [
+    "PLANTAS ORMAMENTAIS",
+    2
+   ],
+   [
+    "EUCALIPTO",
+    1
+   ],
+   [
+    "FORRAÇÃO",
+    1
+   ],
+   [
+    "CESTA DE CAFÉ",
+    1
+   ],
+   [
+    "PEDRA",
+    1
+   ],
+   [
+    "ALEATORIO",
+    1
+   ],
+   [
+    "VAI PASSAR NA LOJA",
+    1
+   ],
+   [
+    "VENENOS EM GERAL",
+    1
+   ],
+   [
+    "GRAMA IRATI",
+    1
+   ],
+   [
+    "TERRA / SUBSTRATO",
+    1
+   ]
+  ],
+  "sem_tag_de_tipo": [
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Joãozinho",
+    "telefone": "5541995365038",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Jóice Aparecida Bronguel",
+    "telefone": "5542999115139",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Financeiro Verdes Plantas",
+    "telefone": "5542999589335",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": [
+     "IA DESATIVADA",
+     "QUALIFICADO"
+    ]
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Jenifer Viteck Lopes 🤍",
+    "telefone": "5542991090728",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Júnior",
+    "telefone": "5542998656899",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Damon Bryan",
+    "telefone": "5542999210170",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Viveiro Geronimo Frutas Rio Grande",
+    "telefone": "5554991163164",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Boteco Bester",
+    "telefone": "5542999405985",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": [
+     "BUQUES"
+    ]
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Cris",
+    "telefone": "5542998256297",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": [
+     "EUCALIPTO"
+    ]
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "celso motoboy",
+    "telefone": "5542999729366",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "José Carlos Mazurek",
+    "telefone": "5542998738510",
+    "coluna": "Atendimento Inicial",
+    "tag_do_contato": [
+     "EUCALIPTO"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Otília M. Pires",
+    "telefone": "29208625802137347",
+    "coluna": "Atendimento Inicial (Meta)",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "B.M.V Decorações",
+    "telefone": "1821210185836117",
+    "coluna": "Atendimento Inicial (Meta)",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Fernanda Akemi Guimarães",
+    "telefone": "1151810381164564",
+    "coluna": "Atendimento Inicial (Meta)",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Irene Celina Mudrei",
+    "telefone": "30220535020867846",
+    "coluna": "Atendimento Inicial (Meta)",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "Antôniio Monteiiro",
+    "telefone": "1797741138116781",
+    "coluna": "Atendimento Inicial (Meta)",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "consultora Adriele",
+    "telefone": "5545991145640",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Mara",
+    "telefone": "5542984090448",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Felipe Augusto",
+    "telefone": "5547997368972",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "GRAMA MALLET"
+    ]
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "5519994575974",
+    "telefone": "5519994575974",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "BUQUES"
+    ]
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "5541930974600",
+    "telefone": "554130974600",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Barbara Colombo - PagBank",
+    "telefone": "5511966941916",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Jaqueline",
+    "cliente": "Jaq",
+    "telefone": "5542998410909",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "IA DESATIVADA"
+    ]
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Aline Freitas",
+    "telefone": "5511976787582",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Jean Lubczyk",
+    "telefone": "5542999972544",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "BUQUES"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "Rosângela Wszolek",
+    "telefone": "5542998628408",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": [
+     "FLOR DE CORTE"
+    ]
+   },
+   {
+    "vendedor": "Douglas",
+    "cliente": "schreidereverton",
+    "telefone": "5542999017276",
+    "coluna": "Atendimento de Vendedores",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Geovana Egewarth",
+    "telefone": "5542998357448",
+    "coluna": "Follow-up 2",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "Rafael Previdi",
+    "telefone": "5543984359123",
+    "coluna": "Não Comercial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Fernando",
+    "cliente": "SIGE Cloud",
+    "telefone": "5551997777786",
+    "coluna": "Não Comercial",
+    "tag_do_contato": []
+   },
+   {
+    "vendedor": "Edimar",
+    "cliente": "Fábio Saubier",
+    "telefone": "5542999850725",
+    "coluna": "Incógnita",
+    "tag_do_contato": [
+     "GRAMA"
+    ]
+   },
+   {
+    "vendedor": "Carine",
+    "cliente": "João Gabriel Bacil",
+    "telefone": "5542998560055",
+    "coluna": "Incógnita",
+    "tag_do_contato": [
+     "BUQUES"
+    ]
+   }
+  ],
+  "tag_paisagismo_existe": false
+ },
+ "s8_carga": {
+  "ativos": 193,
+  "por_vendedor": [
+   [
+    "Edimar",
+    69
+   ],
+   [
+    "Jaqueline",
+    54
+   ],
+   [
+    "Carine",
+    28
+   ],
+   [
+    "Douglas",
+    26
+   ],
+   [
+    "Fernando",
+    15
+   ],
+   [
+    "Luana",
+    1
+   ]
+  ],
+  "serie": {
+   "21/10": {
+    "Edimar": 72,
+    "Carine": 26,
+    "Douglas": 15,
+    "sem dono": 1,
+    "Fernando": 9,
+    "Luana": 3,
+    "Jaqueline": 2
+   },
+   "22/10": {
+    "Carine": 38,
+    "Douglas": 26,
+    "Edimar": 80,
+    "Luana": 10,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "23/10": {
+    "Carine": 41,
+    "Edimar": 88,
+    "Douglas": 30,
+    "Luana": 1,
+    "Fernando": 6,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "26/10": {
+    "Douglas": 44,
+    "Carine": 32,
+    "Edimar": 101,
+    "Luana": 6,
+    "Fernando": 9,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "27/10": {
+    "Edimar": 96,
+    "Carine": 28,
+    "Douglas": 31,
+    "Luana": 10,
+    "Fernando": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "28/10": {
+    "Carine": 46,
+    "Edimar": 91,
+    "Fernando": 12,
+    "Douglas": 38,
+    "Luana": 10,
+    "sem dono": 1,
+    "Jaqueline": 2
+   },
+   "29/10": {
+    "Carine": 59,
+    "Edimar": 86,
+    "Douglas": 37,
+    "Luana": 15,
+    "Fernando": 14,
+    "sem dono": 2,
+    "Jaqueline": 2
+   },
+   "30/10": {
+    "Carine": 69,
+    "Douglas": 47,
+    "Edimar": 104,
+    "Luana": 11,
+    "Fernando": 14,
+    "sem dono": 2,
+    "Jaqueline": 2
+   },
+   "02/11": {
+    "Edimar": 104,
+    "Fernando": 21,
+    "Douglas": 28,
+    "Carine": 43,
+    "Luana": 8
+   },
+   "03/11": {
+    "Douglas": 39,
+    "Fernando": 12,
+    "Carine": 36,
+    "Edimar": 126,
+    "Luana": 12
+   },
+   "04/11": {
+    "Luana": 11,
+    "Carine": 41,
+    "Edimar": 64,
+    "Douglas": 48,
+    "Fernando": 9
+   },
+   "05/11": {
+    "Douglas": 56,
+    "Carine": 37,
+    "Edimar": 71,
+    "Luana": 15,
+    "Fernando": 15,
+    "Jaqueline": 3
+   },
+   "06/11": {
+    "Carine": 45,
+    "Edimar": 77,
+    "Douglas": 62,
+    "Fernando": 17,
+    "Luana": 19,
+    "sem dono": 1,
+    "Jaqueline": 4
+   },
+   "09/11": {
+    "Douglas": 72,
+    "Edimar": 76,
+    "Jaqueline": 7,
+    "Carine": 37,
+    "Luana": 9,
+    "Fernando": 24
+   },
+   "10/11": {
+    "Carine": 34,
+    "Fernando": 20,
+    "Edimar": 83,
+    "Douglas": 73,
+    "Luana": 10,
+    "Jaqueline": 3,
+    "sem dono": 4,
+    "user 12107": 1
+   },
+   "11/11": {
+    "Carine": 24,
+    "Edimar": 70,
+    "Douglas": 48,
+    "Fernando": 25,
+    "sem dono": 9,
+    "Luana": 9,
+    "Jaqueline": 3,
+    "user 12107": 1
+   },
+   "12/11": {
+    "Jaqueline": 8,
+    "Carine": 26,
+    "Douglas": 30,
+    "Edimar": 69,
+    "Fernando": 29,
+    "sem dono": 11,
+    "Luana": 9,
+    "user 12107": 1
+   },
+   "13/11": {
+    "Carine": 26,
+    "Edimar": 76,
+    "Douglas": 32,
+    "Jaqueline": 12,
+    "Fernando": 20,
+    "sem dono": 11,
+    "Luana": 3,
+    "user 12107": 1
+   },
+   "16/11": {
+    "Jaqueline": 19,
+    "Fernando": 15,
+    "Edimar": 81,
+    "Carine": 19,
+    "sem dono": 1,
+    "Douglas": 29
+   },
+   "17/11": {
+    "Edimar": 76,
+    "Carine": 26,
+    "Douglas": 26,
+    "Fernando": 14,
+    "Jaqueline": 21,
+    "sem dono": 1
+   },
+   "18/11": {
+    "Carine": 42,
+    "Edimar": 78,
+    "Jaqueline": 16,
+    "Douglas": 24,
+    "Fernando": 14
+   },
+   "19/11": {
+    "Edimar": 79,
+    "Jaqueline": 27,
+    "Carine": 40,
+    "Douglas": 30,
+    "sem dono": 5,
+    "Fernando": 16
+   },
+   "23/11": {
+    "Jaqueline": 54,
+    "Douglas": 26,
+    "Edimar": 69,
+    "Carine": 28,
+    "Fernando": 15,
+    "Luana": 1
+   }
+  }
+ },
+ "s8b_motivo_perda": {
+  "dia": {
+   "perdas": 38,
+   "com_motivo": 38,
+   "com_valor": 33,
+   "categorias": [
+    [
+     "cliente sem retorno (não explica a perda)",
+     23
+    ],
+    [
+     "outro",
+     12
+    ],
+    [
+     "comprou em outro lugar",
+     2
+    ],
+    [
+     "não temos o produto ou a pronta entrega",
+     1
+    ]
+   ]
+  },
+  "desde_20_10": {
+   "perdas": 423,
+   "com_motivo": 417,
+   "com_valor": 398,
+   "categorias": [
+    [
+     "cliente sem retorno (não explica a perda)",
+     243
+    ],
+    [
+     "outro",
+     68
+    ],
+    [
+     "não temos o produto ou a pronta entrega",
+     41
+    ],
+    [
+     "desistiu, adiou ou prazo",
+     24
+    ],
+    [
+     "preço",
+     19
+    ],
+    [
+     "comprou em outro lugar",
+     16
+    ],
+    [
+     "sem motivo",
+     6
+    ],
+    [
+     "logística (cidade, buscar, entrega, frete)",
+     6
+    ]
+   ]
+  },
+  "definicao": "classificação por palavra-chave do texto do motivo; 'sem retorno' = preenchido, mas não diz por que perdeu"
+ },
+ "s8c_desempenho": {
+  "Carine": {
+   "novos_recebidos_card": 10,
+   "novos_respondidos": 12,
+   "tpr_mediana_min": 25.227408333333333,
+   "sem_resposta": 0,
+   "encerramentos": 30,
+   "pelo_acoes": 29,
+   "vendas": 10,
+   "valor_vendas": 1158.54,
+   "perdas": 13,
+   "conversao_encerrados": 0.435,
+   "carteira": 28,
+   "rodizio": true
+  },
+  "Douglas": {
+   "novos_recebidos_card": 8,
+   "novos_respondidos": 3,
+   "tpr_mediana_min": 4.911616666666666,
+   "sem_resposta": 6,
+   "encerramentos": 18,
+   "pelo_acoes": 18,
+   "vendas": 1,
+   "valor_vendas": 74.9,
+   "perdas": 10,
+   "conversao_encerrados": 0.091,
+   "carteira": 26,
+   "rodizio": false
+  },
+  "Edimar": {
+   "novos_recebidos_card": 6,
+   "novos_respondidos": 16,
+   "tpr_mediana_min": 55.24240833333334,
+   "sem_resposta": 0,
+   "encerramentos": 14,
+   "pelo_acoes": 14,
+   "vendas": 1,
+   "valor_vendas": 149.0,
+   "perdas": 8,
+   "conversao_encerrados": 0.111,
+   "carteira": 69,
+   "rodizio": true
+  },
+  "Fernando": {
+   "novos_recebidos_card": 9,
+   "novos_respondidos": 6,
+   "tpr_mediana_min": 112.31465833333334,
+   "sem_resposta": 4,
+   "encerramentos": 2,
+   "pelo_acoes": 2,
+   "vendas": 0,
+   "valor_vendas": 0,
+   "perdas": 0,
+   "conversao_encerrados": null,
+   "carteira": 15,
+   "rodizio": false
+  },
+  "Jaqueline": {
+   "novos_recebidos_card": 13,
+   "novos_respondidos": 8,
+   "tpr_mediana_min": 36.95963333333333,
+   "sem_resposta": 8,
+   "encerramentos": 15,
+   "pelo_acoes": 15,
+   "vendas": 3,
+   "valor_vendas": 777.38,
+   "perdas": 7,
+   "conversao_encerrados": 0.3,
+   "carteira": 54,
+   "rodizio": true
+  }
+ },
+ "s8d_automacoes": {
+  "disparos_por_automacao": {
+   "46387": 39,
+   "56000": 37
+  },
+  "obrigado_venda_efetivada": 16,
+  "acao_55993_disparou": 0
+ },
+ "s9_pedidos_ontem": {
+  "pedidos_anteriores": [],
+  "situacao": []
+ },
+ "pedidos_amanha": [
+  {
+   "texto": "Carine: João Gabriel Bacil — venda ganha parada na Incógnita; devolver para Venda Efetivada",
+   "telefones": [
+    "5542998560055"
+   ]
+  },
+  {
+   "texto": "Douglas: Talita e Amanda — Venda Perdida com cliente dizendo que vem; voltar para follow-up com mensagem agendada",
+   "telefones": [
+    "5542998580666",
+    "5542999671078"
+   ]
+  },
+  {
+   "texto": "Jaqueline: card da plataforma de pedidos na Incógnita → Não Comercial; Eliza Gasparello com dois cards do mesmo contato",
+   "telefones": [
+    "5519994575974",
+    "5542999946983"
+   ]
+  },
+  {
+   "texto": "Douglas: Manoela — Incógnita com 'veio até a loja'; conferir no SIGCLOUD",
+   "telefones": [
+    "5542998131831"
+   ]
+  }
+ ],
+ "edicao": 24
+}
