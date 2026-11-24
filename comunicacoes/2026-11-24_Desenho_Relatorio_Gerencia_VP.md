@@ -1,9 +1,29 @@
 # Relatórios em duas camadas — desenho do relatório de gerência (Verdes Plantas)
-### Rascunho v1 · 24/11/2026 · INTERNO — para o Jhonatan revisar e aprovar · não enviar ao cliente
+### v2 · 24/11/2026 (aprovada pelo Jhonatan) · INTERNO — para o Jhonatan revisar e aprovar · não enviar ao cliente
 
 > Origem da decisão: a sessão de presidência (confidencial). Este documento não cita a origem e pode servir de base para o que for apresentado depois. A comunicação ao Fernando sobre a mudança está **fora deste escopo** — até lá, o diário segue indo para ele como hoje.
 
 ---
+
+## 0. O que mudou na v2 (aprovado pelo Jhonatan em 24/11)
+
+**Relatório × direcionamento são coisas diferentes.** O relatório segue o tempo de decisão do leitor (o Fernando decide tendência → semanal). A cobrança segue a fase do hábito de quem é cobrado (o coordenador está formando rotina diária → verificação diária). Por isso há **três artefatos**:
+
+1. **Relatório de gerência** — semanal, segunda 8h (este documento).
+2. **Sinal diário da coordenação** — 9h30, uma linha no WhatsApp do Fernando: *"Coordenação ontem: lista tratada ✓/✗ · relatório aberto até 9h ✓/✗"*. Sem número de itens, sem lista.
+3. **15 minutos semanais Fernando × Douglas**, logo após o relatório de segunda, **com pauta do Douglas**.
+
+**Regra de reação ao sinal:** só depois de 2 dias vermelhos seguidos, só com o coordenador e só sobre a rotina ("o que travou na coordenação?"). O sinal nunca abre detalhe.
+
+**Fases.** Semanas 1–6: sinal diário + semanal. Passa para **só semanal + alerta por exceção** quando, por 4 semanas seguidas: lista tratada em ≥ 4 de 5 dias · reunião registrada 4 de 4 · encerramentos fora da regra sem piora · dono na operação estável ou caindo. Volta ao diário se 2 semanas seguidas ficarem ruins — comunicado como "voltamos a acompanhar diariamente", nunca como punição.
+
+**Calibragem do sinal:** com a lista resolvendo 37–61% ao dia (16–19/11), o ✓ começa em **≥ 50%** e sobe 10 pontos a cada 4 semanas no verde.
+
+**Pré-condição:** nenhuma cadência resolve o contorno enquanto o Fernando continuar recebendo o diário com nomes. O sinal e o relatório de gerência só valem depois que o diário passar ao coordenador (decisão da presidência).
+
+**Indicadores acrescentados (pesquisa externa, aprovados):** quem resolve as exceções (coordenador × dono) · efeito do follow-up (cliente respondeu em até 7 dias) · resposta no meio da conversa · funil parado em R$ por coluna (substitui "carteira parada") · higiene dos dados (tag de tipo e contatos com mais de um card ativo). **Fora:** dispersão entre vendedores (n = 3 expõe), volume de atividade (vira spam), NPS semanal (n pequeno). **Regra do mínimo de 5 casos vale também para totais e subtotais.** Registro manual do Fernando (D2): opcional.
+
+**Protótipo com dados reais:** `relatorios/gerencia/PROTOTIPO_Gerencia_VP_2026-11-16_a_21.md` (cálculo em `ferramentas/tpr-tr/gerencia.py`).
 
 ## 1. As duas camadas
 
